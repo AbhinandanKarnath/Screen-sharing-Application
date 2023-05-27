@@ -5,19 +5,39 @@ import java.io.ByteArrayInputStream;
 import java.net.*;
 
 public class BroadcastReceiver {
+    InetAddress group;
+    MulticastSocket socket;
+    public boolean joinNetwork()
+    {
+        try{
+            group = InetAddress.getByName("225.0.0.0");
+            socket = new MulticastSocket(5000);
+
+            socket.setTimeToLive(0);
+            if(socket.isClosed())
+            {
+                System.out.println("network not seted....");
+                return false;
+            }
+            socket.joinGroup(new InetSocketAddress(group , 5000) , NetworkInterface.getByName("summit"));
+            System.out.println("network seted....");
+            return true;
+        }
+        catch (Exception e)
+        {
+            System.out.println("network not seted....");
+            System.out.println(e);
+            return false;
+        }
+    }
+    public void endConnectedNetwork()
+    {
+        socket.close();
+    }
     public Image receiver()
     {
         try
         {
-            InetAddress group = InetAddress.getByName("224.0.0.0");
-            MulticastSocket socket = new MulticastSocket(5000);
-
-            if(socket.isClosed())
-            {
-                return null;
-            }
-            socket.joinGroup(new InetSocketAddress(group , 5000) , NetworkInterface.getByName("localhost"));
-
             byte[] complete = new byte[0] ;
 
 
@@ -25,7 +45,6 @@ public class BroadcastReceiver {
             System.out.println(complete.length);
             while(i<108  || !(socket.isClosed()))
             {
-                System.out.println(i++);
                 byte[] bytes = new byte[1024];
                 DatagramPacket packet = new DatagramPacket(bytes , bytes.length , group , 5000);
 
@@ -46,7 +65,6 @@ public class BroadcastReceiver {
                     break;
                 }
             }
-            System.out.println(complete.length);
 
 //            for(int j = 0 ; j<complete.length/5 ; j++)
 //            {
