@@ -8,8 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import static com.project.main.BroadcastSender.closeSocket;
-
 public class SceneController
 {
     private Stage stage;

@@ -1,4 +1,4 @@
-package com.project.main;
+package com.project.model;
 
 import javafx.scene.image.Image;
 
@@ -24,7 +24,6 @@ public class BroadcastSender {
             System.out.println("1");
             socket.joinGroup(new InetSocketAddress(group , 5000) , NetworkInterface.getByName("summit"));
             System.out.println("network established");
-
         }
         catch (Exception e)
         {
@@ -62,6 +61,10 @@ public class BroadcastSender {
                 socket.send(packet);
                 i += length;
             }
+        }
+        catch (SocketException socketException)
+        {
+            socket.close();
         }
         catch (Exception e)
         {

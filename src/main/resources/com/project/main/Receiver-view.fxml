@@ -3,11 +3,13 @@
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1050.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.main.ApplicationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="894.0" prefWidth="1222.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ApplicationController">
    <children>
       <ImageView fx:id="imageField" fitHeight="650.0" fitWidth="1000.0" layoutX="54.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,5 +21,8 @@
       </ImageView>
       <CheckBox fx:id="receiveCheckbox" layoutX="787.0" layoutY="681.0" mnemonicParsing="false" onAction="#ReadyToReceive" text="Connect" textFill="#2bff00" />
       <Button layoutX="302.0" layoutY="685.0" mnemonicParsing="false" onAction="#exitGroup" style="-fx-background-color: black; -fx-border-color: red;" text="End Connection" textAlignment="CENTER" textFill="RED" />
+      <VBox layoutX="997.0" layoutY="36.0" prefHeight="634.0" prefWidth="214.0" style="-fx-background-color: white;" />
+      <Button layoutX="1169.0" layoutY="700.0" mnemonicParsing="false" onAction="#sendMessage" text="send" />
+      <TextField fx:id="message" layoutX="1000.0" layoutY="700.0" prefHeight="27.0" prefWidth="164.0" />
    </children>
 </AnchorPane>
