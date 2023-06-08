@@ -6,14 +6,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="723.0" style="-fx-background-color: black; -fx-border-color: red;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ApplicationController">
    <children>
       <Label layoutX="211.0" layoutY="177.0" prefHeight="46.0" prefWidth="177.0" style="-fx-font-size: 30; -fx-font-family: sans-serif; -fx-text-fill: white;" text="You are ON" />
       <CheckBox fx:id="sendCheckbox" layoutX="237.0" layoutY="132.0" mnemonicParsing="false" onAction="#ReadyToSend" prefHeight="36.0" prefWidth="113.0" style="-fx-text-fill: green; -fx-font-size: 25;" text="Host" />
       <Button layoutX="276.0" layoutY="326.0" mnemonicParsing="false" onAction="#closeConnection" style="-fx-background-color: black; -fx-border-color: red;" text="End" textFill="RED" />
-      <VBox fx:id="vBox" alignment="BASELINE_LEFT" layoutX="450.0" layoutY="14.0" prefHeight="515.0" prefWidth="258.0" style="-fx-background-color: white;" />
+      <VBox fx:id="vBox" alignment="BASELINE_LEFT" layoutX="450.0" layoutY="14.0" prefHeight="515.0" prefWidth="258.0" style="-fx-background-color: green;">
+         <children>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="262.0" style="-fx-background-color: yellow;" text="Group chat">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children></VBox>
       <Button layoutX="650.0" layoutY="544.0" mnemonicParsing="false" onAction="#sendMessage" text="send" />
       <TextField fx:id="message" layoutX="450.0" layoutY="539.0" prefHeight="36.0" prefWidth="190.0" />
+      <CheckBox fx:id="ChatCheckbox" layoutX="450.0" layoutY="575.0" mnemonicParsing="false" onAction="#updateChat" prefHeight="18.0" prefWidth="102.0" text="Receive Chat" textFill="#32d908" />
    </children>
 </AnchorPane>

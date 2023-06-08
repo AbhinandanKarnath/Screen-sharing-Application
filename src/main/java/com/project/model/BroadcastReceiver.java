@@ -8,6 +8,9 @@ public class BroadcastReceiver {
     int count = 0 ;
     InetAddress group;
     MulticastSocket socket;
+    DatagramPacket packet;
+    int i;
+    byte[] complete;
     public boolean joinNetwork()
     {
         try{
@@ -36,12 +39,12 @@ public class BroadcastReceiver {
     {
         try
         {
-            byte[] complete = new byte[0] ;
-            int i=0;
+            complete = new byte[0] ;
+            i=0;
             while(i<108  || !(socket.isClosed()))
             {
                 byte[] bytes = new byte[1024];
-                DatagramPacket packet = new DatagramPacket(bytes , bytes.length , group , 5000);
+                packet = new DatagramPacket(bytes , bytes.length , group , 5000);
 
                 socket.receive(packet);
                 byte[] imgData = packet.getData();
