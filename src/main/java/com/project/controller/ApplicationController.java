@@ -1,20 +1,19 @@
 package com.project.controller;
 
-import com.project.model.BroadcastReceiver;
+import javafx.fxml.FXML;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
-import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 import java.io.ByteArrayInputStream;
 
+import com.project.model.BroadcastReceiver;
 import static com.project.model.BroadcastSender.*;
 import static com.project.model.Message.*;
 
@@ -26,8 +25,8 @@ public class ApplicationController{
     @FXML private CheckBox receiveCheckbox;
     @FXML private CheckBox ChatCheckbox;
 
-    Task<Void> receiveMessagesTask ;
-    BroadcastReceiver obj;
+    private Task<Void> receiveMessagesTask ;
+    private BroadcastReceiver obj;
     public static boolean send;
 
     @FXML
@@ -74,7 +73,6 @@ public class ApplicationController{
             }
         }
     }
-
     @FXML
     public void closeConnection()
     {
@@ -92,6 +90,7 @@ public class ApplicationController{
     public void sendMessage()
     {
         sendMessageToEveryone(message.getText());
+        message.setText("");
     }
     @FXML
     public void updateChat() {

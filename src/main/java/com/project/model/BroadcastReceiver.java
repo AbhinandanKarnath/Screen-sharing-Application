@@ -1,28 +1,27 @@
 package com.project.model;
 
-import javafx.scene.image.Image;
-import java.io.ByteArrayInputStream;
 import java.net.*;
 
 public class BroadcastReceiver {
-    int count = 0 ;
-    InetAddress group;
-    MulticastSocket socket;
-    DatagramPacket packet;
-    int i;
-    byte[] complete;
+    private static MulticastSocket socket;
+    private InetAddress group;
+    private DatagramPacket packet;
+    private byte[] complete;
+    private int port=5000;
+    private int packetLength;
+    private int count = 0 ;
     public boolean joinNetwork()
     {
         try{
             group = InetAddress.getByName("225.0.0.0");
-            socket = new MulticastSocket(5000);
+            socket = new MulticastSocket(port);
 
             socket.setTimeToLive(0);
             if(socket.isClosed())
             {
                 return false;
             }
-            socket.joinGroup(new InetSocketAddress(group , 5000) , NetworkInterface.getByName("summit"));
+            socket.joinGroup(new InetSocketAddress(group , port) , NetworkInterface.getByName("summit"));
             return true;
         }
         catch (Exception e)
@@ -40,25 +39,26 @@ public class BroadcastReceiver {
         try
         {
             complete = new byte[0] ;
-            i=0;
-            while(i<108  || !(socket.isClosed()))
+            while(!(socket.isClosed()))
             {
                 byte[] bytes = new byte[1024];
-                packet = new DatagramPacket(bytes , bytes.length , group , 5000);
+                packet = new DatagramPacket(bytes , bytes.length , group , port);
 
                 socket.receive(packet);
                 byte[] imgData = packet.getData();
-                byte[] newImagedata = new byte[complete.length + packet.getLength()];
+                packetLength = packet.getLength();
+                byte[] newImagedata = new byte[complete.length + packetLength];
 
                 System.arraycopy(complete,0,newImagedata,0,complete.length);
-                System.arraycopy(imgData , 0,newImagedata,complete.length,packet.getLength());
+                System.arraycopy(imgData , 0,newImagedata,complete.length,packetLength);
                 complete = newImagedata;
 
-                if(packet.getLength()<1024 || socket.isClosed())
+                if(packetLength<1024 || socket.isClosed())
                 {
                     break;
                 }
             }
+            System.out.println(count++);
             return complete;
         }
         catch (Exception e)

@@ -1,9 +1,7 @@
 package com.project.model;
 
 import com.project.controller.ApplicationController;
-import javafx.scene.image.Image;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.net.*;
 
@@ -12,15 +10,14 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class BroadcastSender {
-    static InetAddress group;
-    static MulticastSocket socket;
-
-    static Robot robot;
-    static Toolkit toolkit;
-    static Dimension dimension;
-    static Rectangle rectangle;
-    static DatagramPacket packet;
-    static byte[] smallPacket;
+    private static InetAddress group;
+    private static MulticastSocket socket;
+    private static Robot robot;
+    private static Toolkit toolkit;
+    private static Dimension dimension;
+    private static Rectangle rectangle;
+    private static DatagramPacket packet;
+    private static byte[] smallPacket;
     static int count=0;
     static int size = 1024;
     static int i = 0 ;
@@ -32,19 +29,15 @@ public class BroadcastSender {
             group = InetAddress.getByName("225.0.0.0");
 
             socket = new MulticastSocket(5000);
-            System.out.println("1");
             socket.joinGroup(new InetSocketAddress(group , 5000) , NetworkInterface.getByName("summit"));
-            System.out.println("network established");
             robot = new Robot();
             toolkit = Toolkit.getDefaultToolkit();
             dimension = toolkit.getScreenSize();
             rectangle = new Rectangle( 0 , 0 , (int)dimension.getWidth() , (int)dimension.getHeight());
-            System.out.println("The screen capture tools are ready too...");
         }
         catch (Exception e)
         {
             System.out.println(e);
-            System.out.println("2");
         }
     }
     public static void send()
@@ -73,10 +66,8 @@ public class BroadcastSender {
             catch (Exception e)
             {
                 System.out.println(e);
-
             }
         }
-
     }
     public static void closeSocket()
     {

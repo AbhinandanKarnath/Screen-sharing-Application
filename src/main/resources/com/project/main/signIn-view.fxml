@@ -1,34 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--<?import com.gluonhq.charm.glisten.control.Icon?>-->
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <AnchorPane prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #1E90FF;" BorderPane.alignment="CENTER" />
-   </left>
-   <center>
-      <AnchorPane prefHeight="576.0" prefWidth="423.0" BorderPane.alignment="CENTER">
-         <children>
-            <TextField layoutX="134.0" layoutY="230.0" prefHeight="32.0" prefWidth="235.0" promptText="User Name" style="-fx-background-color: transperent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
-<!--            <Icon content="KEYBOARD_HIDE" layoutX="106.0" layoutY="306.0" />-->
-<!--            <Icon content="ACCOUNT_CIRCLE" layoutX="106.0" layoutY="233.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" />-->
-            <Button layoutX="177.0" layoutY="380.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #0598ff;" text="Login" />
-            <Hyperlink layoutX="160.0" layoutY="522.0" text="Forgot your Password ?" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="93.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@people.png" />
-               </image></ImageView>
-            <PasswordField layoutX="137.0" layoutY="304.0" prefHeight="32.0" prefWidth="240.0" promptText="Password" style="-fx-background-color: transperent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
-         </children>
-      </AnchorPane>
-   </center>
-</BorderPane>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.QuadCurve?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="440.0" style="-fx-background-color: rgb(20,20,20);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.main.SceneController">
+   <children>
+      <QuadCurve controlX="373.9999694824219" controlY="-188.80001831054688" endX="411.7998962402344" endY="108.79998779296875" layoutX="123.0" layoutY="470.0" startX="-32.5999641418457" startY="92.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.07575757124207237" endY="0.35606075416911737" startX="1.0" startY="0.318181804635308">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7599999904632568" green="0.04560000076889992" blue="0.04560000076889992" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.05489278584718704" green="0.37460169196128845" blue="0.6736842393875122" opacity="0.8799999952316284" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-58.000091552734375" controlY="-203.39999389648438" endX="353.20001220703125" endY="107.0" layoutX="23.0" layoutY="479.0" startX="-67.59999084472656" startY="107.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.4924242929978804" endY="0.05303036082874646" startX="0.3560606421846332" startY="0.746212150111343">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.036400001496076584" green="0.2862600088119507" blue="0.5199999809265137" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="55.799896240234375" controlY="-214.60003662109375" endX="171.59988403320312" endY="64.0" layoutX="324.0" layoutY="514.0" startX="-267.60009765625" startY="64.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.053030284065188726" startY="0.8106060280944363">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9894737005233765" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="0.0294736847281456" green="0.31691229343414307" blue="0.5684210658073425" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.030565302819013596" green="0.13569720089435577" blue="0.5157894492149353" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-99.60009765625" controlY="-189.607421875" endX="66.79989624023438" endY="29.4000244140625" layoutX="280.0" layoutY="545.0" startX="-294.80010986328125" startY="29.4000244140625" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.3295454978942871" endY="0.3068181962677927" startX="0.3863636797124688" startY="0.8333333875193741">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.28333333134651184" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06113060563802719" green="0.2126835584640503" blue="0.5157894492149353" opacity="0.8799999952316284" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-106.00007629394531" controlY="-174.39999389648438" endX="118.79991149902344" endY="63.0" layoutX="118.0" layoutY="550.0" startX="-242.00009155273438" startY="63.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.8825758153742009" endY="0.30303030303030304" startX="0.21590905207576166" startY="0.30303028496828954">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.045499999076128006" green="0.5832594633102417" blue="0.6499999761581421" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.03664717450737953" green="0.28096166253089905" blue="0.49473685026168823" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="68.79989624023438" controlY="-183.39999389648438" endX="68.79986572265625" endY="52.59259033203125" layoutX="417.0" layoutY="574.0" startX="-267.40008544921875" startY="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.33333339113177674" endY="1.0" startX="0.5719697619929458">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.018200000748038292" green="0.3226342499256134" blue="0.9100000262260437" opacity="0.8399999737739563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.0313725508749485" green="0.14509804546833038" blue="0.250980406999588" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <Label layoutX="166.0" layoutY="57.0" text="Sign-in" textAlignment="CENTER" textFill="#008cff">
+         <font>
+            <Font name="Elephant" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="UserName" layoutX="125.0" layoutY="162.0" promptText="User Name" style="-fx-background-color: rgb(20,20,20); -fx-border-width: 0 0px 1.5px 0px; -fx-border-color: red; -fx-text-fill: white;">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font>
+      </TextField>
+      <CubicCurve controlX1="42.99993896484375" controlX2="-93.80010986328125" controlY1="-174.19259643554688" controlY2="117.807373046875" endX="225.59988403320312" endY="89.0" layoutX="261.0" layoutY="532.0" startX="-275.60009765625" startY="89.0" stroke="BLACK" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.5757575829823811">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9894737005233765" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="0.08382066339254379" green="0.8778817653656006" blue="0.9052631855010986" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.03529411926865578" green="0.2823529541492462" blue="0.4941176474094391" opacity="0.8799999952316284" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </CubicCurve>
+      <TextField fx:id="designation" layoutX="125.0" layoutY="234.0" prefHeight="26.0" prefWidth="188.0" promptText="Designation" style="-fx-background-color: rgb(20,20,20); -fx-border-width: 0 0px 1px 0px; -fx-border-color: WHITE; -fx-text-fill: white;">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="181.0" layoutY="364.0" mnemonicParsing="false" onAction="#signInAsUser" style="-fx-background-color: rgb(5,80,232);" text="sign-in" textFill="#f7f3f3">
+         <font>
+            <Font name="Ebrima" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
