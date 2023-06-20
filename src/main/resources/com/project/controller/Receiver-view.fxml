@@ -23,16 +23,14 @@
       </ImageView>
       <CheckBox fx:id="receiveCheckbox" layoutX="787.0" layoutY="681.0" mnemonicParsing="false" onAction="#ReadyToReceive" text="Connect" textFill="#2bff00" />
       <Button layoutX="302.0" layoutY="685.0" mnemonicParsing="false" onAction="#exitGroup" style="-fx-background-color: black; -fx-border-color: red;" text="End Connection" textAlignment="CENTER" textFill="RED" />
-      <VBox fx:id="vBox" layoutX="997.0" layoutY="20.0" prefHeight="642.0" prefWidth="214.0" style="-fx-background-color: white;">
-         <children>
-            <Label alignment="CENTER" prefHeight="18.0" prefWidth="218.0" style="-fx-background-color: black;" text="Group Chat" textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold" size="18.0" />
-               </font>
-            </Label>
-         </children></VBox>
+      <VBox fx:id="vBox" alignment="BOTTOM_LEFT" layoutX="997.0" layoutY="48.0" prefHeight="614.0" prefWidth="214.0" style="-fx-background-color: white;" />
       <Button layoutX="1169.0" layoutY="700.0" mnemonicParsing="false" onAction="#sendMessage" text="send" />
       <TextField fx:id="message" layoutX="1000.0" layoutY="700.0" prefHeight="27.0" prefWidth="164.0" />
       <CheckBox fx:id="ChatCheckbox" layoutX="1000.0" layoutY="673.0" mnemonicParsing="false" onAction="#updateChat" text="Receive Chat" textFill="#009900" />
+      <Label alignment="CENTER" layoutX="995.0" layoutY="26.0" prefHeight="18.0" prefWidth="218.0" style="-fx-background-color: black;" text="Group Chat" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

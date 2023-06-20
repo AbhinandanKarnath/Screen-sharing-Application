@@ -30,7 +30,7 @@ public class BroadcastReceiver {
             return false;
         }
     }
-    public void endConnectedNetwork()
+    public void endConnectedNetwork()throws Exception
     {
         socket.close();
     }

@@ -69,7 +69,7 @@ public class BroadcastSender {
             }
         }
     }
-    public static void closeSocket()
+    public static void closeSocket() throws Exception
     {
         socket.close();
         count = 0;

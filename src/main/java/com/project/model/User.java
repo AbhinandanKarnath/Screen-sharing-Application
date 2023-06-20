@@ -6,6 +6,11 @@ public class User implements UserInterface,Network{
     private int port;
     private String address;
     private String addressName;
+    static User user;
+    public void setUserObject(User user)
+    {
+        this.user = user;
+    }
     @Override
     public void setUserName(String userName) {
         this.userName = userName;
@@ -14,6 +19,10 @@ public class User implements UserInterface,Network{
     @Override
     public void setDesignation(String userDesignation) {
         this.userDesignation =  userDesignation;
+    }
+    public static User getUserObject()
+    {
+        return user;
     }
 
     @Override

@@ -2,11 +2,21 @@ package com.project.model;
 
 import java.net.*;
 
+import static com.project.model.User.getUserObject;
+
 public class Message {
     private static boolean set = false;
     private static int port=1234;
     private static MulticastSocket socket;
     private static InetAddress inetAddress;
+    static User user ;
+    private static String userName;
+    private static String userDesignation;
+    private static void setUserInfo()
+    {
+        userName = user.getUserName();
+        userDesignation = user.getDesignation();
+    }
     public static void setMessageNetwork()
     {
         try
@@ -16,18 +26,22 @@ public class Message {
             inetAddress = InetAddress.getByName("226.0.0.0");
             socket.joinGroup(new InetSocketAddress(inetAddress, port) , NetworkInterface.getByName("summitMessage"));
             set = true;
+            user = getUserObject();
+            setUserInfo();
         }
         catch (Exception e)
         {
             System.out.println(e);
         }
     }
+
     public static void sendMessageToEveryone(String message)
     {
         try
         {
             if(set)
             {
+                message = userName+":"+message;
                 byte[] messageBytes = message.getBytes("UTF-8");
                 DatagramPacket packet = new DatagramPacket(messageBytes , messageBytes.length , inetAddress , port);
                 socket.send(packet);
@@ -56,10 +70,9 @@ public class Message {
         {
             System.out.println(e);
         }
-        return null;
+        return "'"+userName+"' is out of the chat for now....";
     }
-    public static void closeChatConnection()
-    {
+    public static void closeChatConnection() {
         set = false;
         socket.close();
     }

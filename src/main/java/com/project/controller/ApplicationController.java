@@ -14,10 +14,11 @@ import javafx.scene.text.Font;
 import java.io.ByteArrayInputStream;
 
 import com.project.model.BroadcastReceiver;
+
 import static com.project.model.BroadcastSender.*;
 import static com.project.model.Message.*;
 
-public class ApplicationController{
+public class ApplicationController {
     @FXML private VBox vBox;
     @FXML private ImageView imageField;
     @FXML private CheckBox sendCheckbox;
@@ -60,10 +61,7 @@ public class ApplicationController{
             try {
                 SetNetwork();
                 Runnable runnable = () -> {
-//                    while (send)
-//                    {
                         send();
-//                    }
                 };
                 new Thread(runnable).start();
             }
@@ -76,15 +74,28 @@ public class ApplicationController{
     @FXML
     public void closeConnection()
     {
-        send = false;
-        sendCheckbox.setSelected(false);
-        closeSocket();
-        sendCheckbox.setText("GO ONLINE");
+        try
+        {
+            send = false;
+            sendCheckbox.setSelected(send);
+            ChatCheckbox.setSelected(send);
+            closeSocket();
+            sendCheckbox.setText("GO ONLINE");
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     @FXML
     public void exitGroup()
     {
-        obj.endConnectedNetwork();
+        try {
+            obj.endConnectedNetwork();
+        }catch (Exception e)
+        {
+            System.out.println(e.getMessage());;
+        }
     }
     @FXML
     public void sendMessage()
@@ -93,11 +104,13 @@ public class ApplicationController{
         message.setText("");
     }
     @FXML
-    public void updateChat() {
-        if(ChatCheckbox.isSelected()) {
-            setMessageNetwork();
-            System.out.println("The message network setted.......");
-            try {
+    public void updateChat()
+    {
+        try
+        {
+            if(ChatCheckbox.isSelected()) {
+                setMessageNetwork();
+
                 receiveMessagesTask = new Task<>() {
                     @Override
                     protected Void call() throws Exception {
@@ -106,7 +119,6 @@ public class ApplicationController{
 
                             Platform.runLater(() -> {
                                 Label label = new Label(message);
-//                                label.setBackground(Color.web("#0076a3")); cannot chang the chat label color
                                 label.setFont(new Font("Arial",16));
                                 vBox.getChildren().add(label);
                             });
@@ -115,17 +127,15 @@ public class ApplicationController{
                     }
                 };
                 new Thread(receiveMessagesTask).start();
-            } catch (Exception e) {
-                System.out.println("here.........................");
-                System.out.println(e);
-            }
-        } else {
-            try {
+                sendMessageToEveryone(" is in the Chat");
+            } else {
                 receiveMessagesTask.cancel();
                 closeChatConnection();
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
             }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }
 }

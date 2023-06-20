@@ -1,4 +1,4 @@
-package com.project.main;
+package com.project.controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,7 @@ public class Main extends Application {
     public void start(Stage stage) {
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("signIn-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("one-for-all");
             stage.setScene(scene);
