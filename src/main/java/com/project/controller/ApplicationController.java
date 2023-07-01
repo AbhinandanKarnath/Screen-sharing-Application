@@ -1,5 +1,6 @@
 package com.project.controller;
 
+import com.project.view.Sounds;
 import javafx.fxml.FXML;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
@@ -29,6 +30,7 @@ public class ApplicationController {
     private Task<Void> receiveMessagesTask ;
     private BroadcastReceiver obj;
     public static boolean send;
+    Sounds sounds = new Sounds();
 
     @FXML
     protected void ReadyToReceive() {
@@ -37,6 +39,7 @@ public class ApplicationController {
 
         if(obj.joinNetwork())
         {
+            sounds.setNetwork();
             Runnable runnable = () -> {
                 try
                 {
@@ -60,6 +63,7 @@ public class ApplicationController {
         {
             try {
                 SetNetwork();
+                sounds.setNetwork();
                 Runnable runnable = () -> {
                         send();
                 };

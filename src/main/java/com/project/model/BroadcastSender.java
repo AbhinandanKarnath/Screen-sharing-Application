@@ -71,7 +71,10 @@ public class BroadcastSender {
     }
     public static void closeSocket() throws Exception
     {
-        socket.close();
+        if(!socket.isClosed())
+        {
+            socket.close();
+        }
         count = 0;
     }
 }

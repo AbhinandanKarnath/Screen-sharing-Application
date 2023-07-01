@@ -74,6 +74,9 @@ public class Message {
     }
     public static void closeChatConnection() {
         set = false;
-        socket.close();
+        if(!socket.isClosed())
+        {
+            socket.close();
+        }
     }
 }

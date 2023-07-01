@@ -1,6 +1,7 @@
 package com.project.controller;
 
 import com.project.model.User;
+import com.project.view.Sounds;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +12,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.shape.CubicCurve;
-import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
 
 public class SceneController
@@ -21,8 +21,8 @@ public class SceneController
     @FXML TextField userName;
     @FXML TextField designation;
     @FXML Label homeUserName;
-    @FXML
-    CubicCurve wave;
+    @FXML CubicCurve wave;
+    Sounds sounds = new Sounds();
     String name ;
     String signInAs;
 
@@ -31,7 +31,7 @@ public class SceneController
     {
         name = userName.getText();
         signInAs = designation.getText();
-
+        sounds.loginSound();
         try
         {
             User user = new User();
@@ -58,6 +58,7 @@ public class SceneController
     public void broadcasterScene(ActionEvent event)
     {
         try {
+            sounds.r1Music();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sender-view.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -82,6 +83,8 @@ public class SceneController
     public void broadcastReceiverScene(ActionEvent event)
     {
         try {
+
+            sounds.rMusic();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Receiver-view.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -116,5 +119,13 @@ public class SceneController
 //        double setY2 = (y2 < -30 && y2 > -100) ? y2+1 : y2-1 ;
 //        wave.setControlY1(setY1);
 //        wave.setControlY2(setY2);
+    }
+    @FXML
+    public void menuBar()
+    {
+
+    }
+    private void playMusic() {
+
     }
 }

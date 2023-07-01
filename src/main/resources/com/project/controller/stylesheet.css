@@ -1,0 +1,10 @@
+
+#menuBar:hover
+{
+ -fx-background-color:black;
+}
+
+#usr:hover
+{
+    -fx-background-color : red;
+}

@@ -30,9 +30,12 @@ public class BroadcastReceiver {
             return false;
         }
     }
-    public void endConnectedNetwork()throws Exception
+    public void endConnectedNetwork()
     {
-        socket.close();
+        if(!socket.isClosed())
+        {
+            socket.close();
+        }
     }
     public byte[] receiver()
     {
