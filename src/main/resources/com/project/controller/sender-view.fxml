@@ -3,24 +3,35 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="723.0" style="-fx-background-color: rgb(20,20,20); -fx-border-color: red;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ApplicationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="723.0" style="-fx-background-color: rgb(20,20,20); -fx-border-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ApplicationController">
    <children>
-      <Label layoutX="211.0" layoutY="177.0" prefHeight="46.0" prefWidth="177.0" style="-fx-font-size: 30; -fx-font-family: sans-serif; -fx-text-fill: white;" text="You are ON" />
-      <CheckBox fx:id="sendCheckbox" layoutX="237.0" layoutY="132.0" mnemonicParsing="false" onAction="#ReadyToSend" prefHeight="36.0" prefWidth="113.0" style="-fx-text-fill: green; -fx-font-size: 25;" text="Host" />
-      <Button layoutX="276.0" layoutY="326.0" mnemonicParsing="false" onAction="#closeConnection" style="-fx-background-color: black; -fx-border-color: red;" text="End" textFill="RED" />
-      <VBox fx:id="vBox" alignment="BOTTOM_LEFT" layoutX="450.0" layoutY="43.0" prefHeight="488.0" prefWidth="258.0" style="-fx-background-color: rgb(240,240,240);" />
-      <Button layoutX="650.0" layoutY="544.0" mnemonicParsing="false" onAction="#sendMessage" text="send" />
-      <TextField fx:id="message" layoutX="450.0" layoutY="539.0" prefHeight="36.0" prefWidth="190.0" />
-      <CheckBox fx:id="ChatCheckbox" layoutX="450.0" layoutY="575.0" mnemonicParsing="false" onAction="#updateChat" prefHeight="18.0" prefWidth="102.0" text="Receive Chat" textFill="#32d908" />
-      <Label alignment="CENTER" layoutX="448.0" layoutY="14.0" prefHeight="18.0" prefWidth="262.0" style="-fx-background-color: rgb(20,20,20);" text="Group chat" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="590.0" stroke="BLACK" strokeType="INSIDE" width="723.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.4390733242034912" green="0.15410000085830688" blue="0.6700000166893005" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="149.0" layoutY="249.0" prefHeight="46.0" prefWidth="177.0" style="-fx-font-size: 30; -fx-font-family: sans-serif; -fx-text-fill: white;" text="You are ON" />
+      <CheckBox fx:id="sendCheckbox" layoutX="181.0" layoutY="140.0" mnemonicParsing="false" onAction="#ReadyToSend" prefHeight="36.0" prefWidth="113.0" style="-fx-text-fill: green; -fx-font-size: 25;" text="Host" />
+      <Button layoutX="218.0" layoutY="503.0" mnemonicParsing="false" onAction="#closeConnection" style="-fx-background-color: black; -fx-border-color: red;" text="End" textFill="RED" />
+      <fx:include layoutX="450.0" source="chatBox-view.fxml" />
    </children>
 </AnchorPane>

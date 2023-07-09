@@ -11,14 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.SceneController">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
-         <children>
-            <Button layoutX="147.0" layoutY="154.0" mnemonicParsing="false" onAction="#broadcasterScene" text="send" />
-         </children>
-      </AnchorPane>
-   </center>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="727.0" style="-fx-background-color: rgb(20,20,20);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.SceneController">
    <left>
       <AnchorPane id="menuAnchorPane" fx:id="slider" prefHeight="335.0" prefWidth="130.0" BorderPane.alignment="CENTER">
          <children>
@@ -29,7 +22,7 @@
                         <Image url="@pngwing.com.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" text="Network settings" />
+                  <Button mnemonicParsing="false" text="Network settings" visible="false" />
                   <ImageView fitHeight="31.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@papaer.png" />
@@ -41,24 +34,17 @@
          </children>
       </AnchorPane>
    </left>
-   <right>
-      <AnchorPane prefHeight="334.0" prefWidth="0.0" style="-fx-background-color: red;" BorderPane.alignment="CENTER">
-         <children>
-            <Button layoutX="7.0" layoutY="154.0" mnemonicParsing="false" onAction="#broadcastReceiverScene" text="receive" />
-         </children>
-      </AnchorPane>
-   </right>
    <top>
-      <AnchorPane prefHeight="47.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="47.0" prefWidth="600.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="49.0" fitWidth="58.0" layoutX="372.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@pngwing.com%20(1).png" />
                </image>
             </ImageView>
-            <Label id="usr" fx:id="homeUserName" layoutX="437.0" layoutY="29.0" stylesheets="@stylesheet.css">
+            <Label id="usr" fx:id="homeUserName" layoutX="437.0" layoutY="29.0" prefHeight="24.0" prefWidth="0.0" stylesheets="@stylesheet.css">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Forte" size="20.0" />
                </font>
             </Label>
             <ImageView id="menu" accessibleRole="BUTTON" accessibleText="menu" fitHeight="38.0" fitWidth="42.0" layoutX="14.0" layoutY="10.0" onMouseEntered="#menuBar" pickOnBounds="true" preserveRatio="true">
@@ -75,4 +61,12 @@
             <URL value="@navigation.css" />
          </stylesheets></AnchorPane>
    </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="182.0" layoutY="189.0" mnemonicParsing="false" onAction="#broadcasterScene" text="send" />
+            <Button layoutX="405.0" layoutY="189.0" mnemonicParsing="false" onAction="#broadcastReceiverScene" text="receive" />
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

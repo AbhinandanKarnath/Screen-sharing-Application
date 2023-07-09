@@ -7,7 +7,7 @@ public class BroadcastReceiver {
     private InetAddress group;
     private DatagramPacket packet;
     private byte[] complete;
-    private int port=5000;
+    private final int port=5000;
     private int packetLength;
     private int count = 0 ;
     public boolean joinNetwork()
@@ -26,7 +26,7 @@ public class BroadcastReceiver {
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -66,7 +66,7 @@ public class BroadcastReceiver {
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
         return null;
     }

@@ -1,12 +1,13 @@
 package com.project.model;
 
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 
 import static com.project.model.User.getUserObject;
 
 public class Message {
     private static boolean set = false;
-    private static int port=1234;
+    private final static int port=1234;
     private static MulticastSocket socket;
     private static InetAddress inetAddress;
     static User user ;
@@ -31,7 +32,7 @@ public class Message {
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 
@@ -42,14 +43,14 @@ public class Message {
             if(set)
             {
                 message = userName+":"+message;
-                byte[] messageBytes = message.getBytes("UTF-8");
+                byte[] messageBytes = message.getBytes(StandardCharsets.UTF_8);
                 DatagramPacket packet = new DatagramPacket(messageBytes , messageBytes.length , inetAddress , port);
                 socket.send(packet);
             }
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
     public static String receiveMessages()
@@ -68,7 +69,7 @@ public class Message {
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
         return "'"+userName+"' is out of the chat for now....";
     }

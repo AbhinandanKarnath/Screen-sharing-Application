@@ -10,9 +10,10 @@ public class Main extends Application {
     public void start(Stage stage) {
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("signIn-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("signInBackground-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("one-for-all");
+            stage.setResizable(false);
             stage.setScene(scene);
             stage.show();
         }

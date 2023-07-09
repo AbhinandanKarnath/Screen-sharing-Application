@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -20,6 +21,7 @@ public class SceneController
     private Scene scene;
     @FXML TextField userName;
     @FXML TextField designation;
+    @FXML Button ToHome;
     @FXML Label homeUserName;
     @FXML CubicCurve wave;
     Sounds sounds = new Sounds();
@@ -27,17 +29,23 @@ public class SceneController
     String signInAs;
 
     @FXML
-    public void signInAsUser(ActionEvent event)
+    public void signIn()
     {
         name = userName.getText();
         signInAs = designation.getText();
-        sounds.loginSound();
+        User user = new User();
+        user.setUserObject(user);
+        user.setUserName(name);
+        user.setDesignation(signInAs);
+        ToHome.setDisable(false);
+    }
+
+    @FXML
+    public void toHomePage(ActionEvent event)
+    {
         try
         {
-            User user = new User();
-            user.setUserObject(user);
-            user.setUserName(name);
-            user.setDesignation(signInAs);
+            sounds.loginSound();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home-view.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -62,21 +70,21 @@ public class SceneController
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sender-view.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            ApplicationController message = fxmlLoader.getController();
+//            ChatBoxController message = fxmlLoader.getController();
             scene = new Scene(root);
-            scene.setOnKeyPressed(keyEvent -> {
-                if(keyEvent.getCode().equals(KeyCode.ENTER))
-                {
-                    message.sendMessage();
-                }
-            });
+//            scene.setOnKeyPressed(keyEvent -> {
+//                if(keyEvent.getCode().equals(KeyCode.ENTER))
+//                {
+//                    message.sendMessage();
+//                }
+//            });
             stage.setScene(scene);
             stage.show();
 
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
     @FXML
@@ -88,21 +96,21 @@ public class SceneController
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Receiver-view.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            ApplicationController message = fxmlLoader.getController();
+//            ChatBoxController message = fxmlLoader.getController();
             scene = new Scene(root);
-            scene.setOnKeyPressed(keyEvent -> {
-                if(keyEvent.getCode().equals(KeyCode.ENTER))
-                {
-                    message.sendMessage();
-                }
-            });
+//            scene.setOnKeyPressed(keyEvent -> {
+//                if(keyEvent.getCode().equals(KeyCode.ENTER))
+//                {
+//                    message.sendMessage();
+//                }
+//            });
             stage.setScene(scene);
             stage.show();
 
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
     private void setData(String data)

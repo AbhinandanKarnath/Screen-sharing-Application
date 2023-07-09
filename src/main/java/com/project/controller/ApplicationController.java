@@ -1,6 +1,7 @@
 package com.project.controller;
 
 import com.project.view.Sounds;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
@@ -20,14 +21,9 @@ import static com.project.model.BroadcastSender.*;
 import static com.project.model.Message.*;
 
 public class ApplicationController {
-    @FXML private VBox vBox;
     @FXML private ImageView imageField;
     @FXML private CheckBox sendCheckbox;
-    @FXML private TextField message;
     @FXML private CheckBox receiveCheckbox;
-    @FXML private CheckBox ChatCheckbox;
-
-    private Task<Void> receiveMessagesTask ;
     private BroadcastReceiver obj;
     public static boolean send;
     Sounds sounds = new Sounds();
@@ -50,7 +46,7 @@ public class ApplicationController {
                 }
                 catch (Exception e)
                 {
-                    System.out.println(e);
+                    System.out.println(e.getMessage());
                 }
             };
             new Thread(runnable).start();
@@ -65,26 +61,34 @@ public class ApplicationController {
                 SetNetwork();
                 sounds.setNetwork();
                 Runnable runnable = () -> {
+                    try
+                    {
                         send();
+                    }
+                    catch (Exception e)
+                    {
+                        System.out.println(e);
+                    }
                 };
                 new Thread(runnable).start();
             }
             catch (Exception e)
             {
-                System.out.println(e);
+                System.out.println(e.getMessage());
             }
         }
     }
     @FXML
-    public void closeConnection()
+    public void closeConnection(ActionEvent event)
     {
         try
         {
             send = false;
             sendCheckbox.setSelected(send);
-            ChatCheckbox.setSelected(send);
             closeSocket();
             sendCheckbox.setText("GO ONLINE");
+            new ChatBoxController().End();
+            new SceneController().toHomePage(event);
         }
         catch (Exception e)
         {
@@ -97,47 +101,6 @@ public class ApplicationController {
         try {
             obj.endConnectedNetwork();
         }catch (Exception e)
-        {
-            System.out.println(e.getMessage());;
-        }
-    }
-    @FXML
-    public void sendMessage()
-    {
-        sendMessageToEveryone(message.getText());
-        message.setText("");
-    }
-    @FXML
-    public void updateChat()
-    {
-        try
-        {
-            if(ChatCheckbox.isSelected()) {
-                setMessageNetwork();
-
-                receiveMessagesTask = new Task<>() {
-                    @Override
-                    protected Void call() throws Exception {
-                        while (!isCancelled()) {
-                            String message = receiveMessages();
-
-                            Platform.runLater(() -> {
-                                Label label = new Label(message);
-                                label.setFont(new Font("Arial",16));
-                                vBox.getChildren().add(label);
-                            });
-                        }
-                        return null;
-                    }
-                };
-                new Thread(receiveMessagesTask).start();
-                sendMessageToEveryone(" is in the Chat");
-            } else {
-                receiveMessagesTask.cancel();
-                closeChatConnection();
-            }
-        }
-        catch (Exception e)
         {
             System.out.println(e.getMessage());
         }

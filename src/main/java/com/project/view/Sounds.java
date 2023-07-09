@@ -23,7 +23,7 @@ public class Sounds {
     public void loginSound()
     {
 //            soundPath = "E:\\intelijCVVProject\\Main\\src\\main\\resources\\com\\project\\controller\\Sounds\\jarvis.mp3";
-            soundPath = "E:\\intelijCVVProject\\Main\\src\\main\\resources\\com\\project\\controller\\Sounds\\home.mp3a" ;//
+            soundPath = "E:\\intelijCVVProject\\Main\\src\\main\\resources\\com\\project\\controller\\Sounds\\home.mp3" ;//
             playSound(soundPath);
     }
     public void setNetwork()

@@ -18,6 +18,8 @@ public class BroadcastSender {
     private static Rectangle rectangle;
     private static DatagramPacket packet;
     private static byte[] smallPacket;
+    private static BufferedImage image;
+    private static ByteArrayOutputStream bos;
     static int count=0;
     static int size = 1024;
     static int i = 0 ;
@@ -37,7 +39,7 @@ public class BroadcastSender {
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
     public static void send()
@@ -45,8 +47,8 @@ public class BroadcastSender {
         while(ApplicationController.send){
             try
             {
-                BufferedImage image = robot.createScreenCapture(rectangle);
-                ByteArrayOutputStream bos =new ByteArrayOutputStream();
+                image = robot.createScreenCapture(rectangle);
+                bos =new ByteArrayOutputStream();
                 ImageIO.write(image, "jpg" , bos);
                 bos.flush();
                 byte[] bytes = bos.toByteArray();
@@ -65,11 +67,11 @@ public class BroadcastSender {
             }
             catch (Exception e)
             {
-                System.out.println(e);
+                e.printStackTrace();
             }
         }
     }
-    public static void closeSocket() throws Exception
+    public static void closeSocket()
     {
         if(!socket.isClosed())
         {

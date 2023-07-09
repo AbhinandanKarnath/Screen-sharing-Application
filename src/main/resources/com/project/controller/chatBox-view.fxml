@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="584.0" prefWidth="264.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ChatBoxController">
+   <children>
+      <Button layoutX="171.0" layoutY="546.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="18.0" prefWidth="70.0" text="send" />
+      <TextField fx:id="message" layoutX="20.0" layoutY="513.0" prefHeight="26.0" prefWidth="222.0" />
+      <CheckBox fx:id="ChatCheckbox" layoutX="23.0" layoutY="550.0" mnemonicParsing="false" onAction="#updateChat" prefHeight="18.0" prefWidth="69.0" text="Connect" textFill="#009e12" />
+      <VBox fx:id="vBox" alignment="BOTTOM_LEFT" layoutX="21.0" layoutY="36.0" prefHeight="470.0" prefWidth="222.0" style="-fx-background-color: white;" />
+      <Label layoutX="23.0" layoutY="14.0" prefHeight="23.0" prefWidth="222.0" style="-fx-background-color: black;" text="           Chat Box" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.3750000090310067" startX="1.0" startY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="0.08421052992343903" green="0.08421052992343903" blue="0.08421052992343903" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.6117894053459167" blue="0.9700000286102295" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+   </children>
+</AnchorPane>

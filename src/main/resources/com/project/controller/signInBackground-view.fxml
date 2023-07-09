@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.QuadCurve?>
+
+<AnchorPane maxHeight="769.0" maxWidth="494.0" minHeight="600.0" minWidth="400.0" prefHeight="769.0" prefWidth="494.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.grp">
+   <children>
+      <QuadCurve controlX="329.5546569824219" controlY="-202.34228515625" endX="366.5546569824219" endY="92.0" layoutX="34.0" layoutY="639.0" startX="-32.5999641418457" startY="92.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.07575757124207237" endY="0.35606075416911737" startX="1.0" startY="0.318181804635308">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7599999904632568" green="0.04560000076889992" blue="0.04560000076889992" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.05489278584718704" green="0.37460169196128845" blue="0.6736842393875122" opacity="0.8799999952316284" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-20.79998779296875" controlY="-197.34228515625" endX="247.79998779296875" endY="132.65771484375" layoutX="328.0" layoutY="626.0" startX="-222.79998779296875" startY="109.65771484375" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.4924242929978804" endY="0.05303036082874646" startX="0.3560606421846332" startY="0.746212150111343">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.036400001496076584" green="0.2862600088119507" blue="0.5199999809265137" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-58.000091552734375" controlY="-203.39999389648438" endX="353.20001220703125" endY="107.0" layoutX="41.0" layoutY="640.0" startX="-67.59999084472656" startY="107.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.4924242929978804" endY="0.05303036082874646" startX="0.3560606421846332" startY="0.746212150111343">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.036400001496076584" green="0.2862600088119507" blue="0.5199999809265137" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="55.799896240234375" controlY="-214.60003662109375" endX="171.59988403320312" endY="64.0" layoutX="390.0" layoutY="684.0" startX="-267.60009765625" startY="64.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.053030284065188726" startY="0.8106060280944363">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9894737005233765" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="0.0294736847281456" green="0.31691229343414307" blue="0.5684210658073425" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.030565302819013596" green="0.13569720089435577" blue="0.5157894492149353" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-99.60009765625" controlY="-189.607421875" endX="138.20001220703125" endY="29.4000244140625" layoutX="346.0" layoutY="715.0" startX="-294.80010986328125" startY="29.4000244140625" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.3295454978942871" endY="0.3068181962677927" startX="0.3863636797124688" startY="0.8333333875193741">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.28333333134651184" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06113060563802719" green="0.2126835584640503" blue="0.5157894492149353" opacity="0.8799999952316284" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-106.00007629394531" controlY="-174.39999389648438" endX="118.79991149902344" endY="63.0" layoutX="184.0" layoutY="720.0" startX="-242.00009155273438" startY="63.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.8825758153742009" endY="0.30303030303030304" startX="0.21590905207576166" startY="0.30303028496828954">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.045499999076128006" green="0.5832594633102417" blue="0.6499999761581421" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.03664717450737953" green="0.28096166253089905" blue="0.49473685026168823" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-150.79998779296875" controlY="-146.0" endX="118.79991149902344" endY="63.0" layoutX="460.0" layoutY="720.0" startX="-308.79998779296875" startY="48.65771484375" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.8825758153742009" endY="0.30303030303030304" startX="0.21590905207576166" startY="0.30303028496828954">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.045499999076128006" green="0.5832594633102417" blue="0.6499999761581421" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.03664717450737953" green="0.28096166253089905" blue="0.49473685026168823" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="68.79989624023438" controlY="-183.39999389648438" endX="68.79986572265625" endY="52.59259033203125" layoutX="541.0" layoutY="745.0" startX="-267.40008544921875" startY="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.33333339113177674" endY="1.0" startX="0.5719697619929458">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.018200000748038292" green="0.3226342499256134" blue="0.9100000262260437" opacity="0.8399999737739563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.0313725508749485" green="0.14509804546833038" blue="0.250980406999588" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <CubicCurve controlX1="42.99993896484375" controlX2="-42.40153884887695" controlY1="-174.19259643554688" controlY2="99.76502990722656" endX="225.59988403320312" endY="89.0" layoutX="315.0" layoutY="692.0" startX="-278.62530517578125" startY="100.16880798339844" stroke="BLACK" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.5757575829823811">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9894737005233765" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="0.08382066339254379" green="0.8778817653656006" blue="0.9052631855010986" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.03529411926865578" green="0.2823529541492462" blue="0.4941176474094391" opacity="0.8799999952316284" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </CubicCurve>
+      <QuadCurve controlX="329.5546569824219" controlY="-202.34228515625" endX="366.5546569824219" endY="92.0" layoutX="-12.0" layoutY="-10.0" rotate="-176.7" startX="-32.5999641418457" startY="92.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.07575757124207237" endY="0.35606075416911737" startX="1.0" startY="0.318181804635308">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7599999904632568" green="0.04560000076889992" blue="0.04560000076889992" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.05489278584718704" green="0.37460169196128845" blue="0.6736842393875122" opacity="0.8799999952316284" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-20.79998779296875" controlY="-197.34228515625" endX="247.79998779296875" endY="132.65771484375" layoutX="379.0" layoutY="-15.0" rotate="-165.1" startX="-222.79998779296875" startY="109.65771484375" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.4924242929978804" endY="0.05303036082874646" startX="0.3560606421846332" startY="0.746212150111343">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.036400001496076584" green="0.2862600088119507" blue="0.5199999809265137" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-58.000091552734375" controlY="-203.39999389648438" endX="353.20001220703125" endY="107.0" layoutX="114.0" layoutY="3.0" rotate="-158.2" startX="-67.59999084472656" startY="107.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.4924242929978804" endY="0.05303036082874646" startX="0.3560606421846332" startY="0.746212150111343">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.036400001496076584" green="0.2862600088119507" blue="0.5199999809265137" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="55.799896240234375" controlY="-214.60003662109375" endX="171.59988403320312" endY="64.0" layoutX="261.0" layoutY="38.0" rotate="-176.7" startX="-267.60009765625" startY="64.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.053030284065188726" startY="0.8106060280944363">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9894737005233765" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="0.0294736847281456" green="0.31691229343414307" blue="0.5684210658073425" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.030565302819013596" green="0.13569720089435577" blue="0.5157894492149353" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-99.60009765625" controlY="-189.607421875" endX="138.20001220703125" endY="29.4000244140625" layoutX="217.0" layoutY="69.0" rotate="-176.7" startX="-294.80010986328125" startY="29.4000244140625" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.3295454978942871" endY="0.3068181962677927" startX="0.3863636797124688" startY="0.8333333875193741">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.28333333134651184" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.06113060563802719" green="0.2126835584640503" blue="0.5157894492149353" opacity="0.8799999952316284" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-106.00007629394531" controlY="-174.39999389648438" endX="118.79991149902344" endY="63.0" layoutX="55.0" layoutY="74.0" rotate="-176.7" startX="-242.00009155273438" startY="63.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.8825758153742009" endY="0.30303030303030304" startX="0.21590905207576166" startY="0.30303028496828954">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.045499999076128006" green="0.5832594633102417" blue="0.6499999761581421" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.03664717450737953" green="0.28096166253089905" blue="0.49473685026168823" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-150.79998779296875" controlY="-146.0" endX="118.79991149902344" endY="63.0" layoutX="306.0" layoutY="36.0" rotate="180.0" startX="-308.79998779296875" startY="48.65771484375" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.8825758153742009" endY="0.30303030303030304" startX="0.21590905207576166" startY="0.30303028496828954">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.045499999076128006" green="0.5832594633102417" blue="0.6499999761581421" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.03664717450737953" green="0.28096166253089905" blue="0.49473685026168823" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="68.79989624023438" controlY="-183.39999389648438" endX="68.79986572265625" endY="52.59259033203125" layoutX="223.0" layoutY="42.0" rotate="-176.7" startX="-267.40008544921875" startY="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.33333339113177674" endY="1.0" startX="0.5719697619929458">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.018200000748038292" green="0.3226342499256134" blue="0.9100000262260437" opacity="0.8399999737739563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.0313725508749485" green="0.14509804546833038" blue="0.250980406999588" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <QuadCurve controlX="-212.02081298828125" controlY="-267.6177978515625" endX="68.79986572265625" endY="52.59259033203125" layoutX="452.0" layoutY="91.0" rotate="174.6" startX="-267.40008544921875" startY="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.33333339113177674" endY="1.0" startX="0.5719697619929458">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.018200000748038292" green="0.3226342499256134" blue="0.9100000262260437" opacity="0.8399999737739563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.0313725508749485" green="0.14509804546833038" blue="0.250980406999588" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <fx:include layoutX="25.0" layoutY="170.0" source="signIn-view.fxml" />
+   </children>
+</AnchorPane>
