@@ -25,8 +25,8 @@ public class SceneController
     @FXML CubicCurve wave;
     Sounds sounds = new Sounds();
     User user;
-    String name ;
-    String signInAs;
+    static String name ;
+    static String signInAs;
 
     @FXML
     public void signIn()
@@ -46,7 +46,7 @@ public class SceneController
         try
         {
             sounds.loginSound();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/home-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/homeBackground-view.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);

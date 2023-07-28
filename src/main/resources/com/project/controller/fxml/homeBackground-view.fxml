@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="535.0" maxWidth="780.0" minHeight="535.0" minWidth="780.0" prefHeight="535.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.SceneController">
+   <children>
+      <Pane layoutX="585.0" layoutY="4.0" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #ffba08;">
+         <children>
+            <Circle layoutX="145.0" layoutY="495.0" radius="41.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <LinearGradient endX="0.5492424748160623" endY="0.1742424386920351" startX="0.060606066024664784" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="0.729411780834198" blue="0.0313725508749485" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="45.0" layoutY="243.0" radius="31.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <LinearGradient endX="0.5492424748160623" endY="0.1742424386920351" startX="0.060606066024664784" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="0.729411780834198" blue="0.0313725508749485" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+         </children></Pane>
+      <Pane layoutY="2.0" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #e45201;">
+         <children>
+            <Circle layoutX="68.0" layoutY="234.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <LinearGradient endX="0.6136363437681488" endY="1.0" startX="0.284090918121916" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.95686274766922" green="0.5490196347236633" blue="0.0235294122248888" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.95686274766922" green="0.5490196347236633" blue="0.0235294122248888" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+         </children></Pane>
+      <Pane layoutX="390.0" layoutY="4.0" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #faa307;">
+         <children>
+            <Circle layoutX="195.0" layoutY="140.0" radius="55.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <LinearGradient endX="0.5492424748160623" endY="1.0" startX="0.2765151677709638" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="0.729411780834198" blue="0.0313725508749485" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <Circle fill="#f28907" layoutX="-3.0" layoutY="155.0" radius="46.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle layoutX="188.0" layoutY="425.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <LinearGradient endY="0.318181782057791" startX="0.6893940134481951" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9789473414421082" green="0.6994035243988037" blue="0.04713450372219086" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9800000190734863" green="0.5686362981796265" blue="0.029400000348687172" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+         </children></Pane>
+      <Pane layoutX="195.0" layoutY="4.0" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #f48c06;">
+         <children>
+            <Circle layoutX="4.0" layoutY="448.0" radius="62.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <LinearGradient endX="0.5492424748160623" endY="1.0" startX="0.18560607324947015" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.95686274766922" green="0.5490196347236633" blue="0.0235294122248888" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <Circle fill="#faa307" layoutX="187.0" layoutY="457.0" radius="46.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
+         </children>
+      </Pane>
+      <Pane prefHeight="82.0" prefWidth="780.0" style="-fx-background-color: #E0EFDE;">
+         <children>
+            <Circle layoutX="14.0" layoutY="41.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.6590909081878085" startY="0.424242453141646">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.949999988079071" green="0.37893182039260864" blue="0.02850000001490116" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.729411780834198" blue="0.0313725508749485" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill></Circle>
+            <Label fx:id="homeUserName" layoutX="503.0" layoutY="50.0" text="Name:">
+               <font>
+                  <Font name="Serif Regular" size="15.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <fx:include layoutX="195.0" layoutY="225.0" source="home-view.fxml" />
+   </children>
+</AnchorPane>

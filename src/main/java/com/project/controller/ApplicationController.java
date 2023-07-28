@@ -59,11 +59,13 @@ public class ApplicationController {
             closeSocket();
             sendCheckbox.setText("GO ONLINE");
             new ChatBoxController().End();
-            new SceneController().toHomePage(event);
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
+        }
+        finally {
+            new SceneController().toHomePage(event);
         }
     }
 
@@ -98,10 +100,13 @@ public class ApplicationController {
     {
         try {
             endConnectedNetwork();
-            new SceneController().toHomePage(event);
-        }catch (Exception e)
+        }
+        catch (Exception e)
         {
             e.getMessage();
+        }
+        finally {
+            new SceneController().toHomePage(event);
         }
     }
 }
