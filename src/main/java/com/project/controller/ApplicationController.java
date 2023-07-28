@@ -1,59 +1,30 @@
 package com.project.controller;
 
-import com.project.view.Sounds;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.application.Platform;
-import javafx.concurrent.Task;
+import javafx.event.ActionEvent;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 
 import java.io.ByteArrayInputStream;
 
-import com.project.model.BroadcastReceiver;
-
+import static com.project.model.BroadcastReceiver.*;
 import static com.project.model.BroadcastSender.*;
-import static com.project.model.Message.*;
+
+import com.project.model.BroadcastReceiver;
+import com.project.view.Sounds;
+
+import javax.swing.*;
 
 public class ApplicationController {
     @FXML private ImageView imageField;
     @FXML private CheckBox sendCheckbox;
     @FXML private CheckBox receiveCheckbox;
-    private BroadcastReceiver obj;
     public static boolean send;
     Sounds sounds = new Sounds();
 
     @FXML
-    protected void ReadyToReceive() {
-
-        obj = new BroadcastReceiver();
-
-        if(obj.joinNetwork())
-        {
-            sounds.setNetwork();
-            Runnable runnable = () -> {
-                try
-                {
-                    while (receiveCheckbox.isSelected())
-                    {
-                        imageField.setImage(new Image(new ByteArrayInputStream(obj.receiver())));
-                    }
-                }
-                catch (Exception e)
-                {
-                    System.out.println(e.getMessage());
-                }
-            };
-            new Thread(runnable).start();
-        }
-    }
-    @FXML
-    protected void ReadyToSend() {
+    protected void ReadyToSend() {                         // Methode is called when the user presses Send button
         send = sendCheckbox.isSelected();
         if(send)
         {
@@ -70,7 +41,7 @@ public class ApplicationController {
                         System.out.println(e);
                     }
                 };
-                new Thread(runnable).start();
+                new Thread(runnable).start();           //new separate Thread is created to send the image.
             }
             catch (Exception e)
             {
@@ -95,14 +66,42 @@ public class ApplicationController {
             System.out.println(e.getMessage());
         }
     }
+
     @FXML
-    public void exitGroup()
+    protected void ReadyToReceive() {               // Methode is called when the user presses Receive button
+
+        if(receiveCheckbox.isSelected())
+        {
+            if(joinNetwork())
+            {
+                sounds.setNetwork();
+                Runnable runnable = () -> {
+                    try
+                    {
+                        while (receiveCheckbox.isSelected())
+                        {
+                            imageField.setImage(new Image(new ByteArrayInputStream(receiver())));
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
+                };
+                new Thread(runnable).start();           // new separate thread is created to receive the Image.
+            }
+        }
+    }
+
+    @FXML
+    public void exitGroup(ActionEvent event)
     {
         try {
-            obj.endConnectedNetwork();
+            endConnectedNetwork();
+            new SceneController().toHomePage(event);
         }catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            e.getMessage();
         }
     }
 }

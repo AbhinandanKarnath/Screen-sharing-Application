@@ -4,19 +4,19 @@ import java.net.*;
 
 public class BroadcastReceiver {
     private static MulticastSocket socket;
-    private InetAddress group;
-    private DatagramPacket packet;
-    private byte[] complete;
-    private final int port=5000;
-    private int packetLength;
-    private int count = 0 ;
-    public boolean joinNetwork()
+    private static InetAddress group;
+    private static DatagramPacket packet;
+    private static byte[] complete;
+    private static final int port=5000;
+    private static int packetLength;
+    private static int count = 0 ;
+    public static boolean joinNetwork()
     {
         try{
             group = InetAddress.getByName("225.0.0.0");
             socket = new MulticastSocket(port);
 
-            socket.setTimeToLive(0);
+            socket.setTimeToLive(1);
             if(socket.isClosed())
             {
                 return false;
@@ -26,18 +26,18 @@ public class BroadcastReceiver {
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
             return false;
         }
     }
-    public void endConnectedNetwork()
+    public static void endConnectedNetwork()
     {
         if(!socket.isClosed())
         {
             socket.close();
         }
     }
-    public byte[] receiver()
+    public static byte[] receiver()
     {
         try
         {
@@ -50,11 +50,11 @@ public class BroadcastReceiver {
                 socket.receive(packet);
                 byte[] imgData = packet.getData();
                 packetLength = packet.getLength();
-                byte[] newImagedata = new byte[complete.length + packetLength];
+                byte[] newImageData = new byte[complete.length + packetLength];
 
-                System.arraycopy(complete,0,newImagedata,0,complete.length);
-                System.arraycopy(imgData , 0,newImagedata,complete.length,packetLength);
-                complete = newImagedata;
+                System.arraycopy(complete,0, newImageData,0,complete.length);
+                System.arraycopy(imgData , 0, newImageData,complete.length,packetLength);
+                complete = newImageData;
 
                 if(packetLength<1024 || socket.isClosed())
                 {

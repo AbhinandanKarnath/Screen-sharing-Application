@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="621.0" maxWidth="440.0" minHeight="358.0" minWidth="400.0" prefHeight="358.0" prefWidth="467.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.SceneController">
+<AnchorPane maxHeight="621.0" maxWidth="440.0" minHeight="358.0" minWidth="400.0" prefHeight="358.0" prefWidth="467.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.SceneController">
    <children>
       <Label layoutX="166.0" layoutY="14.0" text="Sign-in" textAlignment="CENTER">
          <font>

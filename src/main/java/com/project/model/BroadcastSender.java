@@ -32,6 +32,7 @@ public class BroadcastSender {
 
             socket = new MulticastSocket(5000);
             socket.joinGroup(new InetSocketAddress(group , 5000) , NetworkInterface.getByName("summit"));
+            socket.setTimeToLive(1);
             robot = new Robot();
             toolkit = Toolkit.getDefaultToolkit();
             dimension = toolkit.getScreenSize();
@@ -54,14 +55,22 @@ public class BroadcastSender {
                 byte[] bytes = bos.toByteArray();
 
                 i = 0 ;
-                while(i<bytes.length)
+                while(i<bytes.length )
                 {
-                    length = Math.min(size, bytes.length - i );
-                    smallPacket = new byte[length];
-                    System.arraycopy(bytes, i, smallPacket, 0, length);
-                    packet = new DatagramPacket(smallPacket, smallPacket.length, group, 5000);
-                    socket.send(packet);
-                    i += length;
+                    try
+                    {
+
+                        length = Math.min(size, bytes.length - i );
+                        smallPacket = new byte[length];
+                        System.arraycopy(bytes, i, smallPacket, 0, length);
+                        packet = new DatagramPacket(smallPacket, smallPacket.length, group, 5000);
+                        socket.send(packet);
+                        i += length;
+                    }
+                    catch(Exception e)
+                    {
+                        e.getMessage();
+                    }
                 }
                 System.out.println(count++);
             }

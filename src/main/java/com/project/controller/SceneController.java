@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 import javafx.scene.shape.CubicCurve;
 import javafx.stage.Stage;
 
@@ -25,6 +24,7 @@ public class SceneController
     @FXML Label homeUserName;
     @FXML CubicCurve wave;
     Sounds sounds = new Sounds();
+    User user;
     String name ;
     String signInAs;
 
@@ -33,7 +33,7 @@ public class SceneController
     {
         name = userName.getText();
         signInAs = designation.getText();
-        User user = new User();
+        user = new User();
         user.setUserObject(user);
         user.setUserName(name);
         user.setDesignation(signInAs);
@@ -46,7 +46,7 @@ public class SceneController
         try
         {
             sounds.loginSound();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/home-view.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -67,7 +67,7 @@ public class SceneController
     {
         try {
             sounds.r1Music();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sender-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/sender-view.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 //            ChatBoxController message = fxmlLoader.getController();
@@ -93,7 +93,7 @@ public class SceneController
         try {
 
             sounds.rMusic();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Receiver-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Receiver-view.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 //            ChatBoxController message = fxmlLoader.getController();
@@ -131,9 +131,6 @@ public class SceneController
     @FXML
     public void menuBar()
     {
-
-    }
-    private void playMusic() {
 
     }
 }

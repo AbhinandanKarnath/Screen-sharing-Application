@@ -19,13 +19,13 @@
                <children>
                   <ImageView fitHeight="31.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@pngwing.com.png" />
+                        <Image url="@../images/pngwing.com.png" />
                      </image>
                   </ImageView>
                   <Button mnemonicParsing="false" text="Network settings" visible="false" />
                   <ImageView fitHeight="31.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@papaer.png" />
+                        <Image url="@../images/papaer.png" />
                      </image>
                   </ImageView>
                   <Button mnemonicParsing="false" text="User manuel" />
@@ -42,14 +42,14 @@
                   <Image url="@pngwing.com%20(1).png" />
                </image>
             </ImageView>
-            <Label id="usr" fx:id="homeUserName" layoutX="437.0" layoutY="29.0" prefHeight="24.0" prefWidth="0.0" stylesheets="@stylesheet.css">
+            <Label id="usr" fx:id="homeUserName" layoutX="440.0" layoutY="17.0" prefHeight="24.0" prefWidth="286.0" stylesheets="@../stylesheet.css">
                <font>
                   <Font name="Forte" size="20.0" />
                </font>
             </Label>
             <ImageView id="menu" accessibleRole="BUTTON" accessibleText="menu" fitHeight="38.0" fitWidth="42.0" layoutX="14.0" layoutY="10.0" onMouseEntered="#menuBar" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@menuBar.png" />
+                  <Image url="@../images/menuBar.png" />
                </image>
                <effect>
                   <Blend opacity="0.5" />
@@ -57,15 +57,15 @@
             </ImageView>
          </children>
          <stylesheets>
-            <URL value="@stylesheet.css" />
-            <URL value="@navigation.css" />
+            <URL value="@../stylesheet.css" />
+            <URL value="@../navigation.css" />
          </stylesheets></AnchorPane>
    </top>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="182.0" layoutY="189.0" mnemonicParsing="false" onAction="#broadcasterScene" text="send" />
-            <Button layoutX="405.0" layoutY="189.0" mnemonicParsing="false" onAction="#broadcastReceiverScene" text="receive" />
+            <Button layoutX="154.0" layoutY="174.0" mnemonicParsing="false" onAction="#broadcasterScene" prefHeight="60.0" prefWidth="100.0" text="send" />
+            <Button layoutX="388.0" layoutY="171.0" mnemonicParsing="false" onAction="#broadcastReceiverScene" prefHeight="65.0" prefWidth="95.0" text="receive" />
          </children>
       </AnchorPane>
    </center>
