@@ -11,10 +11,7 @@ import java.io.ByteArrayInputStream;
 import static com.project.model.BroadcastReceiver.*;
 import static com.project.model.BroadcastSender.*;
 
-import com.project.model.BroadcastReceiver;
 import com.project.view.Sounds;
-
-import javax.swing.*;
 
 public class ApplicationController {
     @FXML private ImageView imageField;

@@ -11,7 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.shape.CubicCurve;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 public class SceneController
@@ -22,7 +22,6 @@ public class SceneController
     @FXML TextField designation;
     @FXML Button ToHome;
     @FXML Label homeUserName;
-    @FXML CubicCurve wave;
     Sounds sounds = new Sounds();
     User user;
     static String name ;
@@ -51,14 +50,14 @@ public class SceneController
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
 
-            SceneController controller = fxmlLoader.getController();
-            controller.setData(name);
+            grp controller = fxmlLoader.getController();
+            controller.setTheLabel(name);
             stage.setScene(scene);
             stage.show();
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            System.out.println(e);
         }
     }
 
@@ -112,25 +111,5 @@ public class SceneController
         {
             System.out.println(e.getMessage());
         }
-    }
-    private void setData(String data)
-    {
-        homeUserName.setText("Hello "+data);
-    }
-    @FXML
-    public void createWave()
-    {
-//        double y1 = wave.getControlY1();
-//        double y2 = wave.getControlY2();
-//
-//        double setY1 = (y1 < -30 && y1 > -100) ? y1+1 : y1-1 ;
-//        double setY2 = (y2 < -30 && y2 > -100) ? y2+1 : y2-1 ;
-//        wave.setControlY1(setY1);
-//        wave.setControlY2(setY2);
-    }
-    @FXML
-    public void menuBar()
-    {
-
     }
 }

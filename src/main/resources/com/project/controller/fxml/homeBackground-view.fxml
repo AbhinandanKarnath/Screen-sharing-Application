@@ -7,13 +7,15 @@
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.QuadCurve?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="535.0" maxWidth="780.0" minHeight="535.0" minWidth="780.0" prefHeight="535.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.SceneController">
+<AnchorPane maxHeight="535.0" maxWidth="780.0" minHeight="535.0" minWidth="780.0" prefHeight="535.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.grp">
    <children>
-      <Pane layoutX="585.0" layoutY="4.0" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #ffba08;">
+      <Pane id="panel" fx:id="paneR" layoutX="585.0" layoutY="4.0" onMouseEntered="#mouseOnPane1" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #ffba08;" stylesheets="@../wave.css">
          <children>
-            <Circle layoutX="145.0" layoutY="495.0" radius="41.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
+            <QuadCurve controlX="67.0" controlY="-62.0" endX="-43.0" endY="90.0" fill="#faa307" layoutX="43.0" layoutY="445.0" startX="-43.0" startY="-165.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle id="shape" fx:id="circle1" layoutX="145.0" layoutY="495.0" radius="41.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
                <fill>
                   <LinearGradient endX="0.5492424748160623" endY="0.1742424386920351" startX="0.060606066024664784" startY="1.0">
                      <stops>
@@ -31,7 +33,7 @@
                   </LinearGradient>
                </fill>
             </Circle>
-            <Circle layoutX="45.0" layoutY="243.0" radius="31.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
+            <Circle fx:id="circle2" layoutX="45.0" layoutY="243.0" radius="31.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
                <fill>
                   <LinearGradient endX="0.5492424748160623" endY="0.1742424386920351" startX="0.060606066024664784" startY="1.0">
                      <stops>
@@ -43,6 +45,24 @@
                         <Stop offset="1.0">
                            <color>
                               <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <Circle fx:id="circle7" layoutX="45.0" layoutY="387.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <LinearGradient endY="0.318181782057791" startX="0.6893940134481951" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9789473414421082" green="0.6994035243988037" blue="0.04713450372219086" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9800000190734863" green="0.5686362981796265" blue="0.029400000348687172" />
                            </color>
                         </Stop>
                      </stops>
@@ -50,9 +70,10 @@
                </fill>
             </Circle>
          </children></Pane>
-      <Pane layoutY="2.0" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #e45201;">
+      <Pane fx:id="paneL" layoutY="2.0" onMouseEntered="#mouseOnPane2" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #e45201;">
          <children>
-            <Circle layoutX="68.0" layoutY="234.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <QuadCurve controlX="-97.0" controlY="59.0" endY="154.0" fill="#f48c06" layoutX="195.0" layoutY="126.0" startY="-46.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="circle3" layoutX="68.0" layoutY="234.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <fill>
                   <LinearGradient endX="0.6136363437681488" endY="1.0" startX="0.284090918121916" startY="1.0">
                      <stops>
@@ -75,10 +96,52 @@
                   </LinearGradient>
                </fill>
             </Circle>
+            <Circle fx:id="circle4" layoutX="27.0" layoutY="306.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <LinearGradient endX="0.6136363437681488" endY="1.0" startX="0.284090918121916" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.95686274766922" green="0.5490196347236633" blue="0.0235294122248888" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.95686274766922" green="0.5490196347236633" blue="0.0235294122248888" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <Circle fx:id="circle8" layoutX="119.0" layoutY="441.0" radius="62.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <LinearGradient endX="0.9852614321620339" endY="1.0" startX="0.18560607324947015" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.95686274766922" green="0.5490196347236633" blue="0.0235294122248888" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
          </children></Pane>
-      <Pane layoutX="390.0" layoutY="4.0" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #faa307;">
+      <Pane fx:id="paneCR" layoutX="390.0" layoutY="4.0" onMouseEntered="#mouseOnPane3" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #faa307;">
          <children>
-            <Circle layoutX="195.0" layoutY="140.0" radius="55.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
+            <QuadCurve controlX="-11.0" controlY="-48.0" endX="87.0" endY="-135.0" fill="#ffba08" layoutX="108.0" layoutY="213.0" startX="87.0" startY="67.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="circle5" layoutX="168.0" layoutY="155.0" radius="55.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
                <fill>
                   <LinearGradient endX="0.5492424748160623" endY="1.0" startX="0.2765151677709638" startY="1.0">
                      <stops>
@@ -96,52 +159,18 @@
                   </LinearGradient>
                </fill>
             </Circle>
-            <Circle fill="#f28907" layoutX="-3.0" layoutY="155.0" radius="46.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
-            <Circle layoutX="188.0" layoutY="425.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
-               <fill>
-                  <LinearGradient endY="0.318181782057791" startX="0.6893940134481951" startY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.9789473414421082" green="0.6994035243988037" blue="0.04713450372219086" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.9800000190734863" green="0.5686362981796265" blue="0.029400000348687172" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Circle>
-         </children></Pane>
-      <Pane layoutX="195.0" layoutY="4.0" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #f48c06;">
+            <Circle fx:id="circle6" fill="#f28907" layoutY="201.0" radius="46.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneCL" layoutX="195.0" layoutY="4.0" onMouseEntered="#mouseOnPane4" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #f48c06;">
          <children>
-            <Circle layoutX="4.0" layoutY="448.0" radius="62.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
-               <fill>
-                  <LinearGradient endX="0.5492424748160623" endY="1.0" startX="0.18560607324947015" startY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.95686274766922" green="0.5490196347236633" blue="0.0235294122248888" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Circle>
-            <Circle fill="#faa307" layoutX="187.0" layoutY="457.0" radius="46.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
+            <QuadCurve controlX="59.0" controlY="-36.0" endX="-41.0" endY="96.0" fill="#e45201" layoutX="41.0" layoutY="385.0" startX="-41.0" startY="-107.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="circle9" fill="#faa307" layoutX="195.0" layoutY="396.0" radius="46.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
          </children>
       </Pane>
       <Pane prefHeight="82.0" prefWidth="780.0" style="-fx-background-color: #E0EFDE;">
          <children>
-            <Circle layoutX="14.0" layoutY="41.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <Circle fx:id="circle10" layoutX="14.0" layoutY="41.0" onMouseEntered="#ChangeColor" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <fill>
                   <LinearGradient endX="1.0" endY="1.0" startX="0.6590909081878085" startY="0.424242453141646">
                      <stops>
@@ -163,7 +192,27 @@
                   <Font name="Serif Regular" size="15.0" />
                </font>
             </Label>
+            <QuadCurve controlX="-43.0" controlY="100.0" endX="79.0" endY="16.0" fill="#e0efde" layoutX="701.0" layoutY="66.0" startX="-171.0" startY="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <QuadCurve controlX="2.0" controlY="169.0" endX="132.0" endY="233.0" layoutX="398.0" layoutY="-151.0" startX="-114.0" startY="233.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <LinearGradient endX="0.43881949874821635" endY="1.0" startX="0.43169250991663577" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.95686274766922" green="0.5490196347236633" blue="0.0235294122248888" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </QuadCurve>
          </children></Pane>
       <fx:include layoutX="195.0" layoutY="225.0" source="home-view.fxml" />
+      <QuadCurve controlX="9.0" controlY="52.0" endX="85.0" endY="-26.0" fill="#f48c06" layoutX="118.0" layoutY="500.0" startX="77.0" startY="89.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>
