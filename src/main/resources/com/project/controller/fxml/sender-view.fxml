@@ -29,8 +29,44 @@
             </LinearGradient>
          </fill>
       </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="137.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.4520425498485565" green="0.14030000567436218" blue="0.6100000143051147" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.0560000017285347" green="0.11159131675958633" blue="0.3499999940395355" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
       <Label layoutX="149.0" layoutY="249.0" prefHeight="46.0" prefWidth="177.0" style="-fx-font-size: 30; -fx-font-family: sans-serif; -fx-text-fill: white;" text="You are ON" />
-      <CheckBox fx:id="sendCheckbox" layoutX="181.0" layoutY="140.0" mnemonicParsing="false" onAction="#ReadyToSend" prefHeight="36.0" prefWidth="113.0" style="-fx-text-fill: green; -fx-font-size: 25;" text="Host" />
+      <CheckBox fx:id="sendCheckbox" layoutX="181.0" layoutY="140.0" mnemonicParsing="false" onAction="#ReadyToSend" prefHeight="36.0" prefWidth="113.0" style="-fx-text-fill: green; -fx-background-color: black; -fx-font-size: 25;" text="Host" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="181.0" layoutY="467.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="114.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.4520425498485565" green="0.14030000567436218" blue="0.6100000143051147" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.0560000017285347" green="0.11159131675958633" blue="0.3499999940395355" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
       <Button layoutX="218.0" layoutY="503.0" mnemonicParsing="false" onAction="#closeConnection" style="-fx-background-color: black; -fx-border-color: red;" text="End" textFill="RED" />
       <fx:include layoutX="450.0" source="chatBox-view.fxml" />
    </children>

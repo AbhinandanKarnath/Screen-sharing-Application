@@ -23,7 +23,7 @@ public class grp {
 
     public void setTheLabel(String name)
     {
-        homeUserName.setText(name);
+        homeUserName.setText("Namaskara :"+name);
     }
     @FXML
     public void mouseOnPane1()

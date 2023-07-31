@@ -7,12 +7,22 @@ import static com.project.model.User.getUserObject;
 
 public class Message {
     private static boolean set = false;
-    private final static int port=1234;
     private static MulticastSocket socket;
     private static InetAddress inetAddress;
     static User user ;
     private static String userName;
     private static String userDesignation;
+
+    private static int port;
+    private static String inetAddressName;
+    private static String networkInterfaceName;
+
+    private static void setNetworkAddress() {
+        NetworkSettings settings = new NetworkSettings();
+        port = settings.getScreenPortNumber();
+        inetAddressName = settings.getScreenNetworkInetAddress();
+        networkInterfaceName = settings.getScreenNetworkInterfaceName();
+    }
     private static void setUserInfo()
     {
         userName = user.getUserName();
@@ -22,10 +32,11 @@ public class Message {
     {
         try
         {
+            setNetworkAddress();
             socket = new MulticastSocket(port);
             socket.setTimeToLive(1);
-            inetAddress = InetAddress.getByName("226.0.0.0");
-            socket.joinGroup(new InetSocketAddress(inetAddress, port) , NetworkInterface.getByName("summitMessage"));
+            inetAddress = InetAddress.getByName(inetAddressName);
+            socket.joinGroup(new InetSocketAddress(inetAddress, port) , NetworkInterface.getByName(networkInterfaceName));
             set = true;
             user = getUserObject();
             setUserInfo();

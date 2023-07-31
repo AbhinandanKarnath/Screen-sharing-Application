@@ -7,13 +7,24 @@ public class BroadcastReceiver {
     private static InetAddress group;
     private static DatagramPacket packet;
     private static byte[] complete;
-    private static final int port=5000;
     private static int packetLength;
+    private static int port;
+    private static String inetAddressName;
+    private static String networkInterfaceName;
     private static int count = 0 ;
+    private static void setNetworkAddress() {
+        NetworkSettings settings = new NetworkSettings();
+        port = settings.getScreenPortNumber();
+        inetAddressName = settings.getScreenNetworkInetAddress();
+        networkInterfaceName = settings.getScreenNetworkInterfaceName();
+    }
+
     public static boolean joinNetwork()
     {
+        setNetworkAddress();
+
         try{
-            group = InetAddress.getByName("225.0.0.0");
+            group = InetAddress.getByName(inetAddressName);
             socket = new MulticastSocket(port);
 
             socket.setTimeToLive(1);
@@ -21,7 +32,7 @@ public class BroadcastReceiver {
             {
                 return false;
             }
-            socket.joinGroup(new InetSocketAddress(group , port) , NetworkInterface.getByName("summit"));
+            socket.joinGroup(new InetSocketAddress(group , port) , NetworkInterface.getByName(networkInterfaceName));
             return true;
         }
         catch (Exception e)
@@ -30,6 +41,7 @@ public class BroadcastReceiver {
             return false;
         }
     }
+
     public static void endConnectedNetwork()
     {
         if(!socket.isClosed())

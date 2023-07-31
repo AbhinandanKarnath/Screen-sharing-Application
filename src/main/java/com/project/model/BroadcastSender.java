@@ -20,6 +20,9 @@ public class BroadcastSender {
     private static byte[] smallPacket;
     private static BufferedImage image;
     private static ByteArrayOutputStream bos;
+    private static int port;
+    private static String inetAddressName;
+    private static String networkInterfaceName;
     static int count=0;
     static int size = 1024;
     static int i = 0 ;
@@ -28,10 +31,16 @@ public class BroadcastSender {
     {
         try
         {
-            group = InetAddress.getByName("225.0.0.0");
 
-            socket = new MulticastSocket(5000);
-            socket.joinGroup(new InetSocketAddress(group , 5000) , NetworkInterface.getByName("summit"));
+            NetworkSettings settings = new NetworkSettings();
+            port = settings.getScreenPortNumber();
+            inetAddressName = settings.getScreenNetworkInetAddress();
+            networkInterfaceName = settings.getScreenNetworkInterfaceName();
+
+            group = InetAddress.getByName(inetAddressName);
+
+            socket = new MulticastSocket(port);
+            socket.joinGroup(new InetSocketAddress(group , port) , NetworkInterface.getByName(networkInterfaceName));
             socket.setTimeToLive(1);
             robot = new Robot();
             toolkit = Toolkit.getDefaultToolkit();

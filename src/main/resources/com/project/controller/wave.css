@@ -1,4 +1,4 @@
-.wave-btn {
+/*.wave-btn {
     -fx-text-fill: #fff;
     -fx-text-decoration: none;
     -fx-border-color: #fff;
@@ -7,15 +7,14 @@
     -fx-font-size: 22px;
     -fx-font-weight: 600;
     /*-fx-font-family: "Noto Sans";*/
-    -fx-line-spacing: 52px;
+  /*  -fx-line-spacing: 52px;
     -fx-background-radius: 10px;
     -fx-position: absolute;
     -fx-translate-x: -50%;
     -fx-translate-y: -50%;
    /* -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 10, 0, 0, 0); */
-    -fx-transition-duration: 1s;
+    /*-fx-transition-duration: 1s;
 }
-
 .wave-btn:before {
     -fx-content: "";
     -fx-background-color: #0097e6;
@@ -28,12 +27,14 @@
     -fx-left: 50%;
     -fx-animation: wave 5s linear infinite;
     -fx-transition-duration: 1s;
-}
+}*/
 
-.wave-btn:hover:before {
+/*.wave-btn:hover:before {
     -fx-top: 15px;
-}
+}*/
 
+
+/*
 @keyframes wave {
     0% {
         -fx-translate-x: -50%;
@@ -44,4 +45,4 @@
         -fx-translate-x: -50%;
         -fx-rotate: 360deg;
     }
-}
+}*/

@@ -1,11 +1,8 @@
 package com.project.model;
 
-public class User implements UserInterface,Network{
+public class User implements UserInterface{
     private String userName;
     private String userDesignation;
-    private int port;
-    private String address;
-    private String addressName;
     static User user;
     public void setUserObject(User user)
     {
@@ -33,35 +30,5 @@ public class User implements UserInterface,Network{
     @Override
     public String getDesignation() {
         return userDesignation;
-    }
-
-    @Override
-    public void setPortNumber(int port) {
-        this.port = port;
-    }
-
-    @Override
-    public void setNetworkInetAddress(String address) {
-        this.address = address;
-    }
-
-    @Override
-    public void setNetworkInterfaceName(String addressName) {
-        this.addressName = addressName;
-    }
-
-    @Override
-    public int getPortNumber() {
-        return port;
-    }
-
-    @Override
-    public String getNetworkInetAddress() {
-        return address;
-    }
-
-    @Override
-    public String getNetworkInterfaceName() {
-        return addressName;
     }
 }

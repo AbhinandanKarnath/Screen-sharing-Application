@@ -187,13 +187,29 @@
                      </stops>
                   </LinearGradient>
                </fill></Circle>
-            <Label fx:id="homeUserName" layoutX="503.0" layoutY="50.0" text="Name:">
+            <Label fx:id="homeUserName" layoutX="510.0" layoutY="50.0" prefHeight="18.0" prefWidth="200.0" text="Name:">
                <font>
-                  <Font name="Serif Regular" size="15.0" />
+                  <Font name="Serif Regular" size="18.0" />
                </font>
+               <textFill>
+                  <LinearGradient endX="0.885735365811323" endY="1.0" startX="0.4036155519224559" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.95686274766922" green="0.5490196347236633" blue="0.0235294122248888" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
             </Label>
-            <QuadCurve controlX="-43.0" controlY="100.0" endX="79.0" endY="16.0" fill="#e0efde" layoutX="701.0" layoutY="66.0" startX="-171.0" startY="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-            <QuadCurve controlX="2.0" controlY="169.0" endX="132.0" endY="233.0" layoutX="398.0" layoutY="-151.0" startX="-114.0" startY="233.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <QuadCurve controlX="-43.0" controlY="100.0" endX="79.0" endY="16.0" fill="#e0efde" layoutX="701.0" layoutY="66.0" startX="-179.0" startY="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <QuadCurve controlX="2.0" controlY="169.0" endX="132.0" endY="233.0" layoutX="398.0" layoutY="-147.0" startX="-114.0" startY="233.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <fill>
                   <LinearGradient endX="0.43881949874821635" endY="1.0" startX="0.43169250991663577" startY="1.0">
                      <stops>
