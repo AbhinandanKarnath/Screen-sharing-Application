@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="520.0" style="-fx-background-color: rgb(20,20,20);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ApplicationController">
+   <children>
+      <CubicCurve controlX1="-223.764404296875" controlX2="-249.50193786621094" controlY1="227.39999389648438" controlY2="-15.930416107177734" endX="218.0699462890625" endY="-33.99999237060547" layoutX="313.0" layoutY="34.0" startX="-315.44110107421875" startY="-40.23398971557617" stroke="BLACK">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.056818145694154665">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </CubicCurve>
+      <Button layoutX="32.0" layoutY="307.0" mnemonicParsing="false" text="Save Chages" />
+      <Label layoutX="74.0" layoutY="192.0" prefHeight="16.0" prefWidth="90.0" text="Port number:" textFill="WHITE">
+         <font>
+            <Font name="SimSun" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="140.0" text="Network Interface Name:" textFill="WHITE">
+         <font>
+            <Font name="SimSun-ExtB" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="235.0" prefHeight="26.0" prefWidth="90.0" text="Inet Address" textFill="WHITE">
+         <font>
+            <Font name="SimSun" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="260.0" layoutY="106.0" text="Screen settings" textFill="WHITE">
+         <font>
+            <Font name="SimSun" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="396.0" layoutY="106.0" text="Chat settings" textFill="WHITE">
+         <font>
+            <Font name="SimSun" size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="259.0" layoutY="135.0" prefHeight="26.0" prefWidth="113.0" promptText="summit" />
+      <TextField layoutX="396.0" layoutY="135.0" prefHeight="26.0" prefWidth="113.0" promptText="summitMessage" />
+      <TextField layoutX="259.0" layoutY="179.0" prefHeight="26.0" prefWidth="113.0" promptText="5550" />
+      <TextField layoutX="396.0" layoutY="179.0" prefHeight="26.0" prefWidth="113.0" promptText="1234" />
+      <TextField layoutX="396.0" layoutY="235.0" prefHeight="26.0" prefWidth="113.0" promptText="228.0.0.0" />
+      <TextField layoutX="259.0" layoutY="235.0" prefHeight="26.0" prefWidth="113.0" promptText="226.0.0.0" />
+      <CubicCurve controlX1="-92.50193786621094" controlX2="-68.50193786621094" controlY1="187.99998474121094" controlY2="-48.47365951538086" endX="369.89813232421875" endY="-48.47365951538086" layoutX="176.0" layoutY="47.0" startX="-175.99998474121094" startY="-46.999996185302734" stroke="BLACK">
+         <fill>
+            <LinearGradient endX="0.11363639614798804" endY="1.0" startX="0.42803028858069214" startY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </CubicCurve>
+      <CubicCurve controlX1="-91.1019287109375" controlX2="-103.90191650390625" controlY1="135.0" controlY2="-47.96672058105469" endX="350.45526123046875" endY="-62.218563079833984" layoutX="189.0" layoutY="57.0" startX="-190.30191040039062" startY="-59.57545471191406" stroke="BLACK">
+         <fill>
+            <LinearGradient endX="0.4469697177410126" endY="0.6553030293999296" startX="0.19696965452396512" startY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </CubicCurve>
+      <CubicCurve controlX1="-213.1019287109375" controlX2="-213.10191345214844" controlY1="112.0" controlY2="-50.23398971557617" endX="220.63861083984375" endY="-44.0" layoutX="323.0" layoutY="44.0" startX="-322.7019348144531" startY="-43.999996185302734" stroke="BLACK">
+         <fill>
+            <LinearGradient endX="0.45833336223255505" endY="0.2992424513354446" startY="0.056818145694154665">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </CubicCurve>
+      <Button layoutX="122.0" layoutY="306.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="83.0" text="Close" />
+      <CubicCurve controlX1="205.423828125" controlX2="5.423858642578125" controlY1="-66.56903076171875" controlY2="-168.96905517578125" endX="152.66143798828125" endY="8.000030517578125" layoutX="395.0" layoutY="392.0" startX="-395.0" startY="8.0" stroke="BLACK">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.44318181101345655" startY="0.37121209231289953">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </CubicCurve>
+      <CubicCurve controlX1="152.661376953125" controlX2="-16.1761474609375" controlY1="-54.557342529296875" controlY2="-139.9690399169922" endX="129.8570556640625" endY="10.19561767578125" layoutX="419.0" layoutY="391.0" startX="-409.7761535644531" startY="10.195587158203125" stroke="BLACK">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.44318181101345655" startX="0.6022727416094505" startY="0.37121209231289953">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </CubicCurve>
+      <CubicCurve controlX1="152.661376953125" controlX2="-36.576171875" controlY1="-54.557342529296875" controlY2="-90.36904907226562" endX="121.06414794921875" endY="15.40264892578125" layoutX="429.0" layoutY="387.0" startX="-406.1761169433594" startY="15.249481201171875" stroke="BLACK">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.44318181101345655" startX="0.8257575756446882" startY="0.37121209231289953">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </CubicCurve>
+      <CubicCurve controlX1="152.661376953125" controlX2="-61.776123046875" controlY1="-54.557342529296875" controlY2="-71.56903076171875" endX="112.25787353515625" endY="6.596435546875" layoutX="439.0" layoutY="397.0" startX="-417.2342224121094" startY="6.44671630859375" stroke="BLACK">
+         <fill>
+            <LinearGradient endY="0.318181804635308" startX="0.5227271860296074" startY="0.43560602990063746">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8941176533699036" green="0.32156863808631897" blue="0.003921568859368563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9803921580314636" green="0.6392157077789307" blue="0.027450980618596077" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </CubicCurve>
+   </children>
+</AnchorPane>

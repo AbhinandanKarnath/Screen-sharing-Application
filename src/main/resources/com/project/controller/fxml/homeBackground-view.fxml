@@ -72,7 +72,7 @@
          </children></Pane>
       <Pane fx:id="paneL" layoutY="2.0" onMouseEntered="#mouseOnPane2" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #e45201;">
          <children>
-            <QuadCurve controlX="-97.0" controlY="59.0" endY="154.0" fill="#f48c06" layoutX="195.0" layoutY="126.0" startY="-46.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <QuadCurve controlX="-97.39999389648438" controlY="41.399993896484375" endY="154.0" fill="#f48c06" layoutX="205.0" layoutY="128.0" startY="-70.5999984741211" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
             <Circle fx:id="circle3" layoutX="68.0" layoutY="234.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <fill>
                   <LinearGradient endX="0.6136363437681488" endY="1.0" startX="0.284090918121916" startY="1.0">
@@ -164,13 +164,13 @@
       </Pane>
       <Pane fx:id="paneCL" layoutX="195.0" layoutY="4.0" onMouseEntered="#mouseOnPane4" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #f48c06;">
          <children>
-            <QuadCurve controlX="59.0" controlY="-36.0" endX="-41.0" endY="96.0" fill="#e45201" layoutX="41.0" layoutY="385.0" startX="-41.0" startY="-107.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <QuadCurve controlX="59.4000244140625" endX="-41.0" endY="85.60000610351562" fill="#e45201" layoutX="30.0" layoutY="365.0" startX="-41.0" startY="-110.39999389648438" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
             <Circle fx:id="circle9" fill="#faa307" layoutX="195.0" layoutY="396.0" radius="46.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
          </children>
       </Pane>
       <Pane prefHeight="82.0" prefWidth="780.0" style="-fx-background-color: #E0EFDE;">
          <children>
-            <Circle fx:id="circle10" layoutX="14.0" layoutY="41.0" onMouseEntered="#ChangeColor" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <Circle fx:id="circle10" layoutX="50.0" layoutY="25.0" onMouseEntered="#ChangeColor" radius="112.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <fill>
                   <LinearGradient endX="1.0" endY="1.0" startX="0.6590909081878085" startY="0.424242453141646">
                      <stops>
@@ -208,10 +208,10 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <QuadCurve controlX="-43.0" controlY="100.0" endX="79.0" endY="16.0" fill="#e0efde" layoutX="701.0" layoutY="66.0" startX="-179.0" startY="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-            <QuadCurve controlX="2.0" controlY="169.0" endX="132.0" endY="233.0" layoutX="398.0" layoutY="-147.0" startX="-114.0" startY="233.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <QuadCurve controlX="-43.0" controlY="100.0" endX="79.0" endY="16.0" fill="#e0efde" layoutX="701.0" layoutY="66.0" startX="-210.20001220703125" startY="16.00000762939453" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <QuadCurve controlX="-22.5999755859375" controlY="135.0" endX="132.0" endY="233.0" layoutX="391.0" layoutY="-135.0" startX="-207.4000244140625" startY="217.39999389648438" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <fill>
-                  <LinearGradient endX="0.43881949874821635" endY="1.0" startX="0.43169250991663577" startY="1.0">
+                  <LinearGradient endX="1.0" endY="0.21969696879386902" proportional="false" startY="0.21212118231888966">
                      <stops>
                         <Stop>
                            <color>
@@ -229,6 +229,7 @@
             </QuadCurve>
          </children></Pane>
       <fx:include layoutX="195.0" layoutY="225.0" source="home-view.fxml" />
-      <QuadCurve controlX="9.0" controlY="52.0" endX="85.0" endY="-26.0" fill="#f48c06" layoutX="118.0" layoutY="500.0" startX="77.0" startY="89.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <QuadCurve controlX="-14.79998779296875" controlY="23.0" endX="77.0" endY="-69.00003051757812" fill="#f48c06" layoutX="128.0" layoutY="502.0" startX="77.0" startY="89.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <fx:include layoutX="25.0" layoutY="45.0" source="openNetworkSetting.fxml" />
    </children>
 </AnchorPane>

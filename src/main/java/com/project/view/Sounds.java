@@ -22,23 +22,23 @@ public class Sounds {
     }
     public void loginSound()
     {
-//            soundPath = "E:\\intelijCVVProject\\Main\\src\\main\\resources\\com\\project\\controller\\Sounds\\jarvis.mp3";
-            soundPath = "E:\\intelijCVVProject\\Main\\src\\main\\resources\\com\\project\\controller\\Sounds\\home.mp3" ;//
+//            soundPath = "src/main/resources/com/project/controller/Sounds/jarvis.mp3";
+            soundPath = "src/main/resources/com/project/controller/Sounds/home.mp3" ;//
             playSound(soundPath);
     }
     public void setNetwork()
     {
-        soundPath= "E:\\intelijCVVProject\\Main\\src\\main\\resources\\com\\project\\controller\\Sounds\\sendSound.mp3";
+        soundPath= "src/main/resources/com/project/controller/Sounds/sendSound.mp3";
         playSound(soundPath);
     }
     public void rMusic()
     {
-        soundPath= "E:\\intelijCVVProject\\Main\\src\\main\\resources\\com\\project\\controller\\Sounds\\guitarR.mp3";
+        soundPath= "src/main/resources/com/project/controller/Sounds/guitarR.mp3";
         playSound(soundPath);
     }
     public void r1Music()
     {
-        soundPath = "E:\\intelijCVVProject\\Main\\src\\main\\resources\\com\\project\\controller\\Sounds\\guitarR1.mp3";
+        soundPath = "src/main/resources/com/project/controller/Sounds/guitarR1.mp3";
         playSound(soundPath);
     }
 }
