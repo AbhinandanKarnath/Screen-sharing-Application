@@ -3,9 +3,11 @@ package com.project.controller;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.concurrent.Task;
+import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
@@ -18,6 +20,15 @@ public class ChatBoxController
     @FXML private CheckBox ChatCheckbox;
     private Task<Void> receiveMessagesTask ;
 
+    public void sendOnEnter(Scene scene)
+    {
+        scene.setOnKeyPressed(keyEvent -> {
+            if(keyEvent.getCode().equals(KeyCode.ENTER))
+            {
+                new ChatBoxController().sendMessage();
+            }
+        });
+    }
 
     public void End()
     {

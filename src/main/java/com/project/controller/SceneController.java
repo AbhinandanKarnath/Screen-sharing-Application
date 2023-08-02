@@ -9,8 +9,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class SceneController
@@ -20,7 +20,6 @@ public class SceneController
     @FXML TextField userName;
     @FXML TextField designation;
     @FXML Button ToHome;
-    @FXML Label homeUserName;
     Sounds sounds = new Sounds();
     User user;
     static String name ;
@@ -56,7 +55,7 @@ public class SceneController
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 
@@ -68,14 +67,7 @@ public class SceneController
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/sender-view.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//            ChatBoxController message = fxmlLoader.getController();
             scene = new Scene(root);
-//            scene.setOnKeyPressed(keyEvent -> {
-//                if(keyEvent.getCode().equals(KeyCode.ENTER))
-//                {
-//                    message.sendMessage();
-//                }
-//            });
             stage.setScene(scene);
             stage.show();
 
@@ -94,21 +86,30 @@ public class SceneController
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Receiver-view.fxml"));
             Parent root = fxmlLoader.load();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//            ChatBoxController message = fxmlLoader.getController();
             scene = new Scene(root);
-//            scene.setOnKeyPressed(keyEvent -> {
-//                if(keyEvent.getCode().equals(KeyCode.ENTER))
-//                {
-//                    message.sendMessage();
-//                }
-//            });
             stage.setScene(scene);
             stage.show();
-
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
+        }
+    }
+    @FXML
+    public void openNetworkSettingWindow()
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/networkSetting-view.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
         }
     }
 }

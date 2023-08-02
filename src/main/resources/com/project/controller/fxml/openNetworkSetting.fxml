@@ -7,8 +7,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="19.0" prefWidth="106.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.NetworkController">
+<AnchorPane prefHeight="19.0" prefWidth="106.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.SceneController">
    <children>
       <Button layoutY="1.0" mnemonicParsing="false" onAction="#openNetworkSettingWindow" style="-fx-background-color: transparent;" text="Network settings" wrapText="true">
          <font>

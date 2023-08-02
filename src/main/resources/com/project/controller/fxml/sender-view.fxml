@@ -47,7 +47,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Label layoutX="149.0" layoutY="249.0" prefHeight="46.0" prefWidth="177.0" style="-fx-font-size: 30; -fx-font-family: sans-serif; -fx-text-fill: white;" text="You are ON" />
+      <Label layoutX="149.0" layoutY="249.0" prefHeight="46.0" prefWidth="177.0" style="-fx-font-size: 30; -fx-font-family: sans-serif; -fx-text-fill: white;" text="Start Hosting" />
       <CheckBox fx:id="sendCheckbox" layoutX="181.0" layoutY="140.0" mnemonicParsing="false" onAction="#ReadyToSend" prefHeight="36.0" prefWidth="113.0" style="-fx-text-fill: green; -fx-background-color: black; -fx-font-size: 25;" text="Host" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="181.0" layoutY="467.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="114.0">
          <fill>
