@@ -35,7 +35,7 @@ public class ApplicationController {
                     }
                     catch (Exception e)
                     {
-                        System.out.println(e);
+                        System.out.println(e.getMessage());
                     }
                 };
                 new Thread(runnable).start();           //new separate Thread is created to send the image.
@@ -100,7 +100,7 @@ public class ApplicationController {
         }
         catch (Exception e)
         {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
         finally {
             new SceneController().toHomePage(event);

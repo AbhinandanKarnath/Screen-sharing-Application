@@ -7,7 +7,6 @@ public class BroadcastReceiver {
     private static InetAddress group;
     private static DatagramPacket packet;
     private static byte[] complete;
-    private static int packetLength;
     private static int port;
     private static String inetAddressName;
     private static String networkInterfaceName;
@@ -61,14 +60,14 @@ public class BroadcastReceiver {
 
                 socket.receive(packet);
                 byte[] imgData = packet.getData();
-                packetLength = packet.getLength();
+                int packetLength = packet.getLength();
                 byte[] newImageData = new byte[complete.length + packetLength];
 
                 System.arraycopy(complete,0, newImageData,0,complete.length);
-                System.arraycopy(imgData , 0, newImageData,complete.length,packetLength);
+                System.arraycopy(imgData , 0, newImageData,complete.length, packetLength);
                 complete = newImageData;
 
-                if(packetLength<1024 || socket.isClosed())
+                if(packetLength <1024 || socket.isClosed())
                 {
                     break;
                 }

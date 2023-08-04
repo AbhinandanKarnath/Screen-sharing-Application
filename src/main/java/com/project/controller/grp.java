@@ -23,14 +23,14 @@ public class grp {
 
     public void setTheLabel(String name)
     {
-        homeUserName.setText("Namaskara :"+name);
+        homeUserName.setText("Namaste "+name);
     }
+
     @FXML
     public void mouseOnPane1()
     {
         TranslateTransition translateTransition1 = new TranslateTransition();
         TranslateTransition translateTransition2 = new TranslateTransition();
-        double bound1 = circle1.getLayoutX();
 
         translateTransition1.setNode(circle1);
         translateTransition1.setDuration(Duration.millis(2000));
@@ -123,19 +123,6 @@ public class grp {
     {
         RotateTransition rotateTransition = new RotateTransition();
         rotateTransition.setNode(circle10);
-        rotateTransition.setDuration(Duration.millis(2000));
-        rotateTransition.setCycleCount(3);
-        rotateTransition.setByAngle(360);
-        rotateTransition.setAutoReverse(true);
-        rotateTransition.play();
-
-    }
-
-    @FXML
-    public void rotateColor()
-    {
-        RotateTransition rotateTransition = new RotateTransition();
-        rotateTransition.setNode(circle1);
         rotateTransition.setDuration(Duration.millis(2000));
         rotateTransition.setCycleCount(3);
         rotateTransition.setByAngle(360);

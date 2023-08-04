@@ -13,16 +13,7 @@ public class BroadcastSender {
     private static InetAddress group;
     private static MulticastSocket socket;
     private static Robot robot;
-    private static Toolkit toolkit;
-    private static Dimension dimension;
     private static Rectangle rectangle;
-    private static DatagramPacket packet;
-    private static byte[] smallPacket;
-    private static BufferedImage image;
-    private static ByteArrayOutputStream bos;
-    private static int port;
-    private static String inetAddressName;
-    private static String networkInterfaceName;
     static int count=0;
     static int size = 1024;
     static int i = 0 ;
@@ -33,9 +24,9 @@ public class BroadcastSender {
         {
 
             NetworkSettings settings = new NetworkSettings();
-            port = settings.getScreenPortNumber();
-            inetAddressName = settings.getScreenNetworkInetAddress();
-            networkInterfaceName = settings.getScreenNetworkInterfaceName();
+            int port = settings.getScreenPortNumber();
+            String inetAddressName = settings.getScreenNetworkInetAddress();
+            String networkInterfaceName = settings.getScreenNetworkInterfaceName();
 
             group = InetAddress.getByName(inetAddressName);
 
@@ -43,9 +34,9 @@ public class BroadcastSender {
             socket.joinGroup(new InetSocketAddress(group , port) , NetworkInterface.getByName(networkInterfaceName));
             socket.setTimeToLive(1);
             robot = new Robot();
-            toolkit = Toolkit.getDefaultToolkit();
-            dimension = toolkit.getScreenSize();
-            rectangle = new Rectangle( 0 , 0 , (int)dimension.getWidth() , (int)dimension.getHeight());
+            Toolkit toolkit = Toolkit.getDefaultToolkit();
+            Dimension dimension = toolkit.getScreenSize();
+            rectangle = new Rectangle( 0 , 0 , (int) dimension.getWidth() , (int) dimension.getHeight());
         }
         catch (Exception e)
         {
@@ -57,8 +48,8 @@ public class BroadcastSender {
         while(ApplicationController.send){
             try
             {
-                image = robot.createScreenCapture(rectangle);
-                bos =new ByteArrayOutputStream();
+                BufferedImage image = robot.createScreenCapture(rectangle);
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 ImageIO.write(image, "jpg" , bos);
                 bos.flush();
                 byte[] bytes = bos.toByteArray();
@@ -70,15 +61,15 @@ public class BroadcastSender {
                     {
 
                         length = Math.min(size, bytes.length - i );
-                        smallPacket = new byte[length];
+                        byte[] smallPacket = new byte[length];
                         System.arraycopy(bytes, i, smallPacket, 0, length);
-                        packet = new DatagramPacket(smallPacket, smallPacket.length, group, 5000);
+                        DatagramPacket packet = new DatagramPacket(smallPacket, smallPacket.length, group, 5000);
                         socket.send(packet);
                         i += length;
                     }
                     catch(Exception e)
                     {
-                        e.getMessage();
+                        System.out.println(e.getMessage());
                     }
                 }
                 System.out.println(count++);

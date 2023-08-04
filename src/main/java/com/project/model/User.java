@@ -4,9 +4,9 @@ public class User implements UserInterface{
     private String userName;
     private String userDesignation;
     static User user;
-    public void setUserObject(User user)
+    public void setUserObject(User userPara)
     {
-        this.user = user;
+        user = userPara;
     }
     @Override
     public void setUserName(String userName) {
