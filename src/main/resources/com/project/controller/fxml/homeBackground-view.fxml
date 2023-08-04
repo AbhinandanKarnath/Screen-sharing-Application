@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.QuadCurve?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="535.0" maxWidth="780.0" minHeight="535.0" minWidth="780.0" prefHeight="535.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.grp">
+<AnchorPane maxHeight="535.0" maxWidth="780.0" minHeight="535.0" minWidth="780.0" prefHeight="535.0" prefWidth="780.0" style="-fx-border-radius: 10 10 10 10; -fx-background-radius: 30; -fx-border-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.grp">
    <children>
       <Pane id="panel" fx:id="paneR" layoutX="585.0" layoutY="4.0" onMouseEntered="#mouseOnPane1" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #ffba08;" stylesheets="@../wave.css">
          <children>
