@@ -2,14 +2,8 @@ package com.project.controller;
 
 import com.project.model.NetworkSettings;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,9 +40,12 @@ public class NetworkController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         NetworkSettings networkSettings = new NetworkSettings();
-        String inet = networkSettings.getScreenNetworkInetAddress();
-        String[] inetPart = inet.split(".",4);
-        System.out.println(inet);
+        String inetScreen = networkSettings.getScreenNetworkInetAddress();
+        String inetChat = networkSettings.getChatNetworkInetAddress();
+        String[] inetScreenPart = inetScreen.split("\\.",4);
+        String[] inetChatPart = inetChat.split("\\.",4);
+
+        System.out.println(inetChat+" "+inetChatPart[0]+" "+inetChatPart[1]+" "+inetChatPart[2]+" <-----");
 
         chatPort.setText(String.valueOf(networkSettings.getChatPortNumber()));
         screenPort.setText(String.valueOf(networkSettings.getScreenPortNumber()));
@@ -57,10 +54,14 @@ public class NetworkController implements Initializable {
         chatInetAddress3.setText("");
         chatInetAddress4.setText("");
         chatInterfaceName.setText(networkSettings.getChatNetworkInterfaceName());
-        screenInetAddress1.setText(inetPart[0]);
-        screenInetAddress2.setText(inetPart[1]);
-        screenInetAddress3.setText(inetPart[2]);
-        screenInetAddress4.setText(inetPart[3]);
+        screenInetAddress1.setText(inetScreenPart[0]);
+        screenInetAddress2.setText(inetScreenPart[1]);
+        screenInetAddress3.setText(inetScreenPart[2]);
+        screenInetAddress4.setText(inetScreenPart[3]);
+        chatInetAddress1.setText(inetChatPart[0]);
+        chatInetAddress2.setText(inetChatPart[1]);
+        chatInetAddress3.setText(inetChatPart[2]);
+        chatInetAddress4.setText(inetChatPart[3]);
         screenInterfaceName.setText(networkSettings.getScreenNetworkInterfaceName());
     }
 
@@ -80,9 +81,6 @@ public class NetworkController implements Initializable {
             screenInetAddress4.setText("");
             screenInterfaceName.setText("");
     }
-
-
-
     @FXML
     public void validate()
     {
