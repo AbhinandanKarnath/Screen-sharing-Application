@@ -8,18 +8,43 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="1184.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ApplicationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="1184.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ApplicationController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="712.0" stroke="BLACK" strokeType="INSIDE" width="1184.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="712.0" stroke="BLACK" strokeType="INSIDE" width="1184.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
          <fill>
-            <LinearGradient endX="0.8530805687203791" endY="0.7819905213270142" startX="0.3933649289099526">
+            <LinearGradient endX="1.0" endY="1.0" startX="0.46533464755406584" startY="0.015151500701904297">
                <stops>
                   <Stop>
                      <color>
-                        <Color green="0.75" blue="1.0" />
+                        <Color red="1.0" green="0.46319809556007385" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="1.0" green="0.4627451002597809" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3450980484485626" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="631.0" layoutX="11.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" width="906.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="267.0" AnchorPane.topAnchor="12.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.09920000284910202" green="0.27292588353157043" blue="0.3199999928474426" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -28,10 +53,10 @@
                      </color>
                   </Stop>
                </stops>
-            </LinearGradient>
+            </RadialGradient>
          </fill>
       </Rectangle>
-      <ImageView fx:id="imageField" fitHeight="630.0" fitWidth="900.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageField" fitHeight="630.0" fitWidth="900.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="70.30755615234375" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="269.0" AnchorPane.topAnchor="14.0">
          <image>
             <Image url="@../images/desktop.jpg" />
          </image>
@@ -39,8 +64,14 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <CheckBox fx:id="receiveCheckbox" layoutX="586.0" layoutY="668.0" mnemonicParsing="false" onAction="#ReadyToReceive" prefHeight="17.0" prefWidth="81.0" text="Connect" textFill="#2bff00" />
-      <Button layoutX="290.0" layoutY="663.0" mnemonicParsing="false" onAction="#exitGroup" style="-fx-border-color: red; -fx-background-color: rgba(255,255,255,0);" text="End Connection" textAlignment="CENTER" textFill="RED" />
-      <fx:include layoutX="918.0" layoutY="78.0" source="chatBox-view.fxml" />
+      <CheckBox fx:id="receiveCheckbox" layoutX="586.0" layoutY="668.0" mnemonicParsing="false" onAction="#ReadyToReceive" prefHeight="27.0" prefWidth="114.0" text="Connect" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font></CheckBox>
+      <Button layoutX="290.0" layoutY="663.0" mnemonicParsing="false" onAction="#exitGroup" style="-fx-background-color: #A30000;" text="End Connection" textAlignment="CENTER" textFill="#8ee3ef">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font></Button>
+      <fx:include layoutX="918.0" layoutY="78.0" source="chatBox-view.fxml" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="918.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="78.0" />
    </children>
 </AnchorPane>

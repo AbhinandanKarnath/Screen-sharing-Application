@@ -20,16 +20,6 @@ public class ChatBoxController
     @FXML private CheckBox ChatCheckbox;
     private Task<Void> receiveMessagesTask ;
 
-    public void sendOnEnter(Scene scene)
-    {
-        scene.setOnKeyPressed(keyEvent -> {
-            if(keyEvent.getCode().equals(KeyCode.ENTER))
-            {
-                new ChatBoxController().sendMessage();
-            }
-        });
-    }
-
     public void End()
     {
         closeChatConnection();
