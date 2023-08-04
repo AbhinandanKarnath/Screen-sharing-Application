@@ -31,7 +31,7 @@
             </LinearGradient>
          </fill>
       </CubicCurve>
-      <Button layoutX="38.0" layoutY="280.0" mnemonicParsing="false" onAction="#validate" text="Save Chages" />
+      <Button layoutX="38.0" layoutY="280.0" mnemonicParsing="false" onAction="#validate" style="-fx-background-color: #ffba08; -fx-background-radius: 35;" text="Save Chages" />
       <Label layoutX="74.0" layoutY="189.0" prefHeight="16.0" prefWidth="90.0" text="Port number:" textFill="WHITE">
          <font>
             <Font name="SimSun" size="15.0" />
@@ -120,7 +120,7 @@
             </LinearGradient>
          </fill>
       </CubicCurve>
-      <Button layoutX="136.0" layoutY="279.0" mnemonicParsing="false" onAction="#clearAll" prefHeight="26.0" prefWidth="83.0" text="reset" />
+      <Button layoutX="136.0" layoutY="279.0" mnemonicParsing="false" onAction="#clearAll" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #e45201; -fx-background-radius: 35;" text="reset" textFill="WHITE" />
       <CubicCurve controlX1="205.423828125" controlX2="5.423858642578125" controlY1="-66.56903076171875" controlY2="-168.96905517578125" endX="178.60809326171875" endY="11.4337158203125" layoutX="395.0" layoutY="392.0" startX="-395.0" startY="8.0" stroke="BLACK">
          <fill>
             <LinearGradient endX="1.0" endY="0.44318181101345655" startY="0.37121209231289953">

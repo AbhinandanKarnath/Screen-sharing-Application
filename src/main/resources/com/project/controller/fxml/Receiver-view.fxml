@@ -64,11 +64,11 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <CheckBox fx:id="receiveCheckbox" layoutX="586.0" layoutY="668.0" mnemonicParsing="false" onAction="#ReadyToReceive" prefHeight="27.0" prefWidth="114.0" text="Connect" wrapText="true">
+      <CheckBox fx:id="receiveCheckbox" layoutX="586.0" layoutY="668.0" mnemonicParsing="false" onAction="#ReadyToReceive" prefHeight="27.0" prefWidth="114.0" text="Connect" textFill="#ffba08" wrapText="true">
          <font>
             <Font size="18.0" />
          </font></CheckBox>
-      <Button layoutX="290.0" layoutY="663.0" mnemonicParsing="false" onAction="#exitGroup" style="-fx-background-color: #A30000;" text="End Connection" textAlignment="CENTER" textFill="#8ee3ef">
+      <Button layoutX="290.0" layoutY="663.0" mnemonicParsing="false" onAction="#exitGroup" prefHeight="27.0" prefWidth="146.0" style="-fx-background-color: #A30000; -fx-background-radius: 45;" text="End Connection" textAlignment="CENTER" textFill="#8ee3ef">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font></Button>

@@ -4,8 +4,6 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
@@ -15,38 +13,44 @@
 
 <AnchorPane prefHeight="584.0" prefWidth="264.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ChatBoxController">
    <children>
-      <Button layoutX="171.0" layoutY="546.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: transparant;">
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
-               <image>
-                  <Image url="@../images/send.png" />
-               </image>
-            </ImageView>
-         </graphic>
+      <Button layoutX="171.0" layoutY="546.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: transparant; -fx-background-color: black; -fx-background-radius: 35;" text="send" textFill="#ffee03">
+         <font>
+            <Font name="Serif Regular" size="15.0" />
+         </font>
       </Button>
-      <TextField fx:id="message" layoutX="20.0" layoutY="513.0" prefHeight="26.0" prefWidth="222.0" />
+      <TextField fx:id="message" layoutX="20.0" layoutY="513.0" prefHeight="26.0" prefWidth="222.0" style="-fx-background-radius: 35;" />
       <CheckBox fx:id="ChatCheckbox" layoutX="23.0" layoutY="550.0" mnemonicParsing="false" onAction="#updateChat" prefHeight="20.0" prefWidth="86.0" text="Connect">
          <font>
             <Font size="14.0" />
          </font>
          <textFill>
-            <LinearGradient endX="1.0" endY="1.0" startX="0.21969697692177514" startY="0.5606060678308661">
+            <LinearGradient endX="1.0" endY="1.0" startX="0.007575759381958952" startY="0.7234848629344595">
                <stops>
                   <Stop>
                      <color>
                         <Color red="0.08579999953508377" green="0.6600000262260437" blue="0.5047911405563354" />
                      </color>
                   </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="0.08579999953508377" green="0.6600000262260437" blue="0.5047911405563354" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.4682926829268292">
+                     <color>
+                        <Color green="1.0" blue="0.9687816500663757" />
+                     </color>
+                  </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="1.0" />
+                        <Color red="0.055837418884038925" blue="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill></CheckBox>
-      <VBox fx:id="vBox" alignment="BOTTOM_LEFT" layoutX="21.0" layoutY="36.0" prefHeight="470.0" prefWidth="222.0" style="-fx-background-color: white;" />
-      <Label layoutX="23.0" layoutY="14.0" prefHeight="23.0" prefWidth="222.0" style="-fx-background-color: black;" text="           Chat Box" textAlignment="CENTER">
+      <VBox fx:id="vBox" alignment="BOTTOM_LEFT" layoutX="21.0" layoutY="36.0" prefHeight="470.0" prefWidth="222.0" style="-fx-background-color: white; -fx-background-radius: 20;" />
+      <Label layoutX="21.0" layoutY="14.0" prefHeight="23.0" prefWidth="222.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="           Chat Box" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="20.0" />
          </font>
@@ -60,12 +64,12 @@
                   </Stop>
                   <Stop offset="0.006729475100942127">
                      <color>
-                        <Color red="0.08421052992343903" green="0.08421052992343903" blue="0.08421052992343903" />
+                        <Color red="0.7157894968986511" green="0.24124756455421448" blue="0.24124756455421448" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.6117894053459167" blue="0.9700000286102295" />
+                        <Color red="1.0" green="0.6361896991729736" blue="0.019999999552965164" />
                      </color>
                   </Stop>
                </stops>

@@ -11,25 +11,25 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="723.0" style="-fx-background-color: rgb(20,20,20); -fx-border-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ApplicationController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="590.0" stroke="BLACK" strokeType="INSIDE" width="723.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="606.0" layoutX="-3.0" layoutY="-13.0" stroke="BLACK" strokeType="INSIDE" width="729.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-14.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.4390733242034912" green="0.15410000085830688" blue="0.6700000166893005" />
+                        <Color red="0.2662336528301239" green="0.15410000085830688" blue="0.6700000166893005" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color />
+                        <Color red="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="137.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="137.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-width: 45; -fx-arc-height: 45;" width="200.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -48,8 +48,8 @@
          </fill>
       </Rectangle>
       <Label layoutX="149.0" layoutY="249.0" prefHeight="46.0" prefWidth="177.0" style="-fx-font-size: 30; -fx-font-family: sans-serif; -fx-text-fill: white;" text="Start Hosting" />
-      <CheckBox fx:id="sendCheckbox" layoutX="181.0" layoutY="140.0" mnemonicParsing="false" onAction="#ReadyToSend" prefHeight="36.0" prefWidth="113.0" style="-fx-text-fill: green; -fx-background-color: black; -fx-font-size: 25;" text="Host" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="181.0" layoutY="467.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="114.0">
+      <CheckBox fx:id="sendCheckbox" layoutX="181.0" layoutY="140.0" mnemonicParsing="false" onAction="#ReadyToSend" prefHeight="36.0" prefWidth="113.0" style="-fx-text-fill: green; -fx-background-color: black; -fx-font-size: 25; -fx-background-radius: 35;" text="Host" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" layoutX="181.0" layoutY="467.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 45; -fx-arc-width: 45;" width="114.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -67,7 +67,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Button layoutX="218.0" layoutY="503.0" mnemonicParsing="false" onAction="#closeConnection" style="-fx-background-color: black; -fx-border-color: red;" text="End" textFill="RED" />
+      <Button layoutX="218.0" layoutY="503.0" mnemonicParsing="false" onAction="#closeConnection" style="-fx-background-color: black; -fx-border-color: red; -fx-background-radius: 35; -fx-border-radius: 35;" text="End" textFill="RED" />
       <fx:include layoutX="450.0" source="chatBox-view.fxml" />
    </children>
 </AnchorPane>

@@ -6,14 +6,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.SceneController">
    <children>
-      <Button layoutX="27.0" layoutY="14.0" mnemonicParsing="false" onAction="#broadcasterScene" prefHeight="74.0" prefWidth="127.0" text="send">
+      <Button layoutX="27.0" layoutY="14.0" mnemonicParsing="false" onAction="#broadcasterScene" prefHeight="74.0" prefWidth="127.0" style="-fx-background-color: #ffba08; -fx-background-radius: 35; -fx-border-color: #e45201; -fx-border-radius: 34;" text="send" textFill="#e45201">
          <font>
-            <Font name="Serif Regular" size="15.0" />
+            <Font name="Serif Bold" size="25.0" />
          </font>
       </Button>
-      <Button layoutX="246.0" layoutY="14.0" mnemonicParsing="false" onAction="#broadcastReceiverScene" prefHeight="74.0" prefWidth="127.0" text="receive">
+      <Button layoutX="246.0" layoutY="14.0" mnemonicParsing="false" onAction="#broadcastReceiverScene" prefHeight="74.0" prefWidth="127.0" style="-fx-background-color: #e45201; -fx-background-radius: 35; -fx-border-color: #ffba08; -fx-border-radius: 34;" text="receive" textFill="#ffba08">
          <font>
-            <Font name="Serif Regular" size="15.0" />
+            <Font name="Serif Regular" size="25.0" />
          </font>
       </Button>
    </children>

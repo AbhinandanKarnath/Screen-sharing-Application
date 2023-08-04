@@ -20,11 +20,16 @@
             <Font name="Elephant" size="30.0" />
          </font>
          <textFill>
-            <RadialGradient centerX="0.6657458563535912" centerY="0.6327014218009479" radius="0.5">
+            <RadialGradient centerX="0.758256886374284" centerY="0.27285290082843594" radius="0.5">
                <stops>
                   <Stop>
                      <color>
                         <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.1655483701539572">
+                     <color>
+                        <Color red="0.9800000190734863" green="0.9760715961456299" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -36,22 +41,22 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <TextField fx:id="userName" layoutX="127.0" layoutY="134.0" promptText="User Name" style="-fx-background-color: rgb(20,20,20); -fx-border-width: 0 0px 1.5px 0px; -fx-border-color: white; -fx-text-fill: #fc6d00;">
+      <TextField fx:id="userName" layoutX="127.0" layoutY="134.0" promptText="User Name" style="-fx-background-color: rgb(20,20,20); -fx-text-fill: #fc6d00; -fx-background-radius: 45;">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="designation" layoutX="125.0" layoutY="199.0" prefHeight="26.0" prefWidth="188.0" promptText="Designation" style="-fx-background-color: rgb(20,20,20); -fx-border-width: 0 0px 1px 0px; -fx-border-color: white; -fx-text-fill: #fc6d00;">
+      <TextField fx:id="designation" layoutX="125.0" layoutY="199.0" prefHeight="26.0" prefWidth="188.0" promptText="Designation" style="-fx-background-color: rgb(20,20,20); -fx-text-fill: #fc6d00; -fx-background-radius: 45;">
          <font>
-            <Font name="SansSerif Bold" size="15.0" />
+            <Font name="SansSerif Regular" size="15.0" />
          </font>
       </TextField>
-      <Button layoutX="62.0" layoutY="312.0" mnemonicParsing="false" onAction="#signIn" prefHeight="38.0" prefWidth="127.0" style="-fx-background-color: rgb(5,80,232);" text="sign-in" textFill="WHITE">
+      <Button layoutX="62.0" layoutY="312.0" mnemonicParsing="false" onAction="#signIn" prefHeight="38.0" prefWidth="127.0" style="-fx-background-color: rgb(5,80,232); -fx-background-radius: 30;" text="sign-in" textFill="WHITE">
          <font>
             <Font name="MS Outlook" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="ToHome" disable="true" layoutX="252.0" layoutY="312.0" mnemonicParsing="false" onAction="#toHomePage" prefHeight="38.0" prefWidth="127.0" style="-fx-background-color: rgb(5,80,232);" text="Log-in" textFill="WHITE">
+      <Button fx:id="ToHome" disable="true" layoutX="252.0" layoutY="312.0" mnemonicParsing="false" onAction="#toHomePage" prefHeight="38.0" prefWidth="127.0" style="-fx-background-color: rgb(5,80,232); -fx-background-radius: 30;" text="Log-in" textFill="WHITE">
          <font>
             <Font name="MS Outlook" size="17.0" />
          </font>

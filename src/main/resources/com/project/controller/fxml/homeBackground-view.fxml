@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="535.0" maxWidth="780.0" minHeight="535.0" minWidth="780.0" prefHeight="535.0" prefWidth="780.0" style="-fx-border-radius: 10 10 10 10; -fx-background-radius: 30; -fx-border-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.grp">
    <children>
-      <Pane id="panel" fx:id="paneR" layoutX="585.0" layoutY="4.0" onMouseEntered="#mouseOnPane1" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #ffba08;" stylesheets="@../wave.css">
+      <Pane id="panel" fx:id="paneR" layoutX="585.0" layoutY="4.0" onMouseEntered="#mouseOnPane1" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #ffba08;">
          <children>
             <QuadCurve controlX="67.0" controlY="-62.0" endX="-43.0" endY="90.0" fill="#faa307" layoutX="43.0" layoutY="445.0" startX="-43.0" startY="-165.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
             <Circle id="shape" fx:id="circle1" layoutX="145.0" layoutY="495.0" radius="41.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
@@ -164,7 +164,7 @@
       </Pane>
       <Pane fx:id="paneCL" layoutX="195.0" layoutY="4.0" onMouseEntered="#mouseOnPane4" prefHeight="535.0" prefWidth="195.0" style="-fx-background-color: #f48c06;">
          <children>
-            <QuadCurve controlX="59.4000244140625" endX="-41.0" endY="85.60000610351562" fill="#e45201" layoutX="30.0" layoutY="365.0" startX="-41.0" startY="-110.39999389648438" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <QuadCurve controlX="49.0" controlY="-31.20001220703125" endX="-41.0" endY="85.60000610351562" fill="#e45201" layoutX="30.0" layoutY="365.0" startX="-41.0" startY="-110.39999389648438" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
             <Circle fx:id="circle9" fill="#faa307" layoutX="195.0" layoutY="396.0" radius="46.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
          </children>
       </Pane>
@@ -229,7 +229,7 @@
             </QuadCurve>
          </children></Pane>
       <fx:include layoutX="195.0" layoutY="225.0" source="home-view.fxml" />
-      <QuadCurve controlX="-14.79998779296875" controlY="23.0" endX="77.0" endY="-69.00003051757812" fill="#f48c06" layoutX="128.0" layoutY="502.0" startX="77.0" startY="89.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <QuadCurve controlX="-7.600006103515625" controlY="27.0" endX="74.79998779296875" endY="-74.60000610351562" fill="#f48c06" layoutX="128.0" layoutY="502.0" startX="74.79998779296875" startY="86.20001220703125" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <fx:include layoutX="25.0" layoutY="45.0" source="openNetworkSetting.fxml" />
    </children>
 </AnchorPane>

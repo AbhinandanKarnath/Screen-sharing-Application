@@ -12,7 +12,6 @@ public class Message {
     static User user ;
     private static String userName;
     private static String userDesignation;
-
     private static int port;
     private static String inetAddressName;
     private static String networkInterfaceName;
