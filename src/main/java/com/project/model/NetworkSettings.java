@@ -1,9 +1,9 @@
 package com.project.model;
 
 public class NetworkSettings implements Network{
-    private static int screenPort = 5550;                                                                                     // Default network settings
+    private static int screenPort = 5000;                                                                                     // Default network settings
     private static int chatPort = 1234;
-    private static String screenInetAddress = "225.0.0.0";
+    private static String screenInetAddress = "227.0.0.0";
     private static String chatInetAddress = "226.0.0.0";
     private static String screenInterfaceName = "summit";
     private static String chatInterfaceName = "summitMessage";

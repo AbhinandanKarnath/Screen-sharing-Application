@@ -38,13 +38,18 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="631.0" layoutX="11.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" width="906.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="267.0" AnchorPane.topAnchor="12.0">
+      <Rectangle arcHeight="25.0" arcWidth="5.0" height="631.0" layoutX="11.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" width="906.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="267.0" AnchorPane.topAnchor="12.0">
          <fill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.09920000284910202" green="0.27292588353157043" blue="0.3199999928474426" />
+                        <Color red="0.105380117893219" green="0.46739181876182556" blue="0.557894766330719" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.6065850375865802">
+                     <color>
+                        <Color red="0.1899999976158142" green="0.10020811855792999" blue="0.009499999694526196" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
@@ -56,7 +61,7 @@
             </RadialGradient>
          </fill>
       </Rectangle>
-      <ImageView fx:id="imageField" fitHeight="630.0" fitWidth="900.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="70.30755615234375" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="269.0" AnchorPane.topAnchor="14.0">
+      <ImageView fx:id="imageField" fitHeight="630.0" fitWidth="900.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/desktop.jpg" />
          </image>

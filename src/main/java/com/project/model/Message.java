@@ -18,9 +18,9 @@ public class Message {
 
     private static void setNetworkAddress() {
         NetworkSettings settings = new NetworkSettings();
-        port = settings.getScreenPortNumber();
-        inetAddressName = settings.getScreenNetworkInetAddress();
-        networkInterfaceName = settings.getScreenNetworkInterfaceName();
+        port = settings.getChatPortNumber();
+        inetAddressName = settings.getChatNetworkInetAddress();
+        networkInterfaceName = settings.getChatNetworkInterfaceName();
     }
     private static void setUserInfo()
     {
@@ -36,6 +36,8 @@ public class Message {
             socket.setTimeToLive(1);
             inetAddress = InetAddress.getByName(inetAddressName);
             socket.joinGroup(new InetSocketAddress(inetAddress, port) , NetworkInterface.getByName(networkInterfaceName));
+
+            System.out.println("chat network screen property :"+port+" "+inetAddressName+" "+networkInterfaceName );
             set = true;
             user = getUserObject();
             setUserInfo();
@@ -55,6 +57,7 @@ public class Message {
                 message = userName+":"+message;
                 byte[] messageBytes = message.getBytes(StandardCharsets.UTF_8);
                 DatagramPacket packet = new DatagramPacket(messageBytes , messageBytes.length , inetAddress , port);
+
                 socket.send(packet);
             }
         }

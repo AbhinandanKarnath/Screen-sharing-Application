@@ -59,7 +59,6 @@ public class BroadcastSender {
                 {
                     try
                     {
-
                         length = Math.min(size, bytes.length - i );
                         byte[] smallPacket = new byte[length];
                         System.arraycopy(bytes, i, smallPacket, 0, length);

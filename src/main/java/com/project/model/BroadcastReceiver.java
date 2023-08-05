@@ -32,6 +32,7 @@ public class BroadcastReceiver {
                 return false;
             }
             socket.joinGroup(new InetSocketAddress(group , port) , NetworkInterface.getByName(networkInterfaceName));
+
             return true;
         }
         catch (Exception e)
