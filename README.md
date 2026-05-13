@@ -1,183 +1,251 @@
-# Local Network Screen Sharing
+# Summit — LAN-Based Classroom Screen Sharing
 
 ---
 
 ## The Problem
 
-In college, when a lecturer wanted to show something on their screen, the entire class would physically crowd around their PC — even though every student had their own machine connected to the same network. There was no screen sharing tool available, and no one wanted to install heavyweight software just for a classroom demo.
+In college, when a lecturer wanted to demo something, the entire class would physically crowd around their PC — even though every student had their own machine connected to the same network. No lightweight screen sharing tool existed for the classroom LAN.
 
-So I built one.
+**Summit** is that tool.
 
 ---
 
-## The Solution
+## What It Does
 
-It works entirely over a **local area network (LAN)** — no internet required, no STUN/TURN servers, no accounts, no setup overhead.
+A real-time screen broadcasting application built for classroom environments. The teacher shares their screen; every student receives it — simultaneously, over the local network, with a live chat panel alongside.
 
-- 📡 One person shares their screen (the teacher/presenter)
-- 👀 Everyone else on the network receives it in real time
-- 💬 A built-in chat panel lets the class communicate during the session
-- 🔇 No audio, no camera — because in a physical classroom, you don't need them
+- **One presenter** captures and streams their screen
+- **Unlimited viewers** receive it in real time via UDP multicast
+- **Built-in chat** runs alongside the stream for questions
+- **No audio, no camera** — in a physical classroom, you already have the teacher's voice
+- **LAN only** — no internet, no accounts, no servers, no setup overhead
+
+---
+
+## Architecture — MVC Pattern
+
+Summit strictly follows the **Model-View-Controller** pattern, reflected directly in the package structure:
+
+| Layer | Package | Responsibility |
+|---|---|---|
+| **Model** | `com.project.model` | Business logic, networking, data |
+| **View** | `com.project.view` + FXML files | UI rendering, audio feedback |
+| **Controller** | `com.project.controller` | Event handling, scene navigation |
+
+---
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **Java 18** | Core language |
+| **JavaFX 20 (FXML)** | GUI framework |
+| **JFoenix 9** | Material Design UI components |
+| **UDP Multicast Sockets** | Screen & chat data transport |
+| **`java.awt.Robot`** | Screen capture |
+| **`javax.imageio.ImageIO`** | JPEG image compression |
+| **Maven** | Build tool & dependency management |
+| **JUnit 5** | Testing framework |
 
 ---
 
 ## Features
 
-| Feature | Details |
-|---|---|
-| **Screen Broadcast** | Captures and streams the presenter's screen to all receivers |
-| **Multicast Delivery** | Uses UDP multicast — one sender, many receivers, no relay server |
-| **Built-in Chat** | Text chat alongside the stream for questions and discussion |
-| **Configurable Network** | Set your multicast address, port, and network interface via the UI |
-| **LAN Only** | Designed for trusted local networks — simple and fast |
-| **One Broadcaster at a Time** | Only one person shares at a time; others are viewers |
+- **Screen Broadcasting** — Presenter captures and streams their screen in real time
+- **Multicast Delivery** — One sender, unlimited receivers, no relay server needed
+- **Live Chat** — Text chat over a separate multicast channel alongside the stream
+- **Network Configuration UI** — Set multicast IPs, ports, and interfaces from within the app
+- **Role-based Sign-in** — Users sign in with a name and designation (Teacher / Student)
+- **Audio Feedback** — Sound effects on navigation and connection events
 
 ---
 
 ## How It Works
 
-### Screen Capture & Broadcast
+### UDP Multicast — Core Transport
 
-The presenter's side uses Java's `Robot` class to take periodic screenshots of the screen. Each frame is compressed as a JPEG and broken into UDP packets:
+Summit uses two separate multicast channels so screen data and chat packets never interfere with each other:
+
+| Channel | Default Address | Default Port |
+|---|---|---|
+| Screen stream | `227.0.0.0` | `5000` |
+| Chat messages | `226.0.0.0` | `1234` |
+
+Receivers subscribe to a group by calling `MulticastSocket.joinGroup()`. The TTL is set to `1`, which keeps packets confined to the local network — they cannot escape the LAN.
+
+### Screen Capture & Packet Fragmentation
 
 ```java
+// 1. Capture the screen
 BufferedImage image = robot.createScreenCapture(rectangle);
+
+// 2. Compress to JPEG
 ByteArrayOutputStream bos = new ByteArrayOutputStream();
 ImageIO.write(image, "jpg", bos);
 byte[] bytes = bos.toByteArray();
+
+// 3. Send in 1024-byte UDP packets sequentially
 ```
 
-These packets are sent over a **UDP multicast socket** to a multicast group address — meaning every machine that has joined the group receives the data simultaneously without the sender needing to know who's listening.
-
-### Receiving & Reassembly
-
-On the receiver side, packets are collected and stitched back together into the full image:
+On the receiver side, packets are accumulated and stitched back together into a full frame. The end of a frame is detected when a packet smaller than 1024 bytes arrives:
 
 ```java
 while (!(socket.isClosed())) {
     byte[] bytes = new byte[1024];
     packet = new DatagramPacket(bytes, bytes.length, group, port);
     socket.receive(packet);
-    // ... accumulate packets until a frame is complete
+
+    // Accumulate into complete[]
+    int packetLength = packet.getLength();
+    byte[] newImageData = new byte[complete.length + packetLength];
+    System.arraycopy(complete, 0, newImageData, 0, complete.length);
+    System.arraycopy(imgData, 0, newImageData, complete.length, packetLength);
+    complete = newImageData;
+
     if (packetLength < 1024 || socket.isClosed()) {
-        break; // last packet of frame
+        break; // End of frame
     }
 }
 ```
 
-A frame is considered complete when a packet smaller than the buffer size (1024 bytes) arrives — indicating the end of the stream for that image.
+### Multithreading
+
+Sending and receiving run on dedicated background threads so the UI never freezes. Chat uses a JavaFX `Task<Void>` with `Platform.runLater()` to safely push updates back to the UI thread.
 
 ### Network Configuration
 
-Network settings (multicast addresses, ports, interface names) are managed through a `NetworkSettings` class and configurable via the JavaFX UI:
+All network settings are managed through a `NetworkSettings` class and editable in the UI. The multicast IP is split into four individual fields for easy entry:
 
 ```java
 NetworkSettings settings = new NetworkSettings();
 int port = settings.getScreenPortNumber();
 String inetAddressName = settings.getScreenNetworkInetAddress();
-socket = new MulticastSocket(port);
-socket.joinGroup(new InetSocketAddress(group, port),
-                 NetworkInterface.getByName(networkInterfaceName));
-```
 
-The UI lets you split and enter the multicast IP address in four separate fields (like `239.0.0.1`) and specify the network interface by name — making it easy to switch between network adapters.
+socket = new MulticastSocket(port);
+socket.joinGroup(
+    new InetSocketAddress(group, port),
+    NetworkInterface.getByName(networkInterfaceName)
+);
+socket.setTimeToLive(1);
+```
 
 ---
 
-## Tech Stack
+## Class Breakdown
 
-- **Java** — Core logic, networking, screen capture
-- **JavaFX** — UI framework (FXML-based controllers)
-- **UDP Multicast** — Transport layer for screen data and chat
-- **`java.awt.Robot`** — Screen capture
-- **`javax.imageio.ImageIO`** — JPEG compression
+### Model Layer
+
+| Class / Interface | Role |
+|---|---|
+| `BroadcastSender` | Screen capture loop, JPEG compression, UDP multicast sending |
+| `BroadcastReceiver` | Joins multicast group, reassembles fragmented packets into frames |
+| `Message` | Chat send/receive over a separate multicast socket |
+| `NetworkSettings` | Stores and manages all network configuration (implements `Network`) |
+| `User` | Holds user name and designation (implements `UserInterface`) |
+| `Network` *(interface)* | Contract for all network setting getters/setters |
+| `UserInterface` *(interface)* | Contract for user data getters/setters |
+
+### Controller Layer
+
+| Class | Role |
+|---|---|
+| `Main` | JavaFX `Application` entry point, loads the first FXML scene |
+| `ApplicationController` | Controls Send/Receive toggle, manages stream lifecycle |
+| `ChatBoxController` | Manages chat UI, sends/receives messages in real time |
+| `NetworkController` | Validates and saves network configuration settings |
+| `SceneController` | Handles all scene/screen navigation |
+| `grp` | Auxiliary controller for home screen labels |
+
+### View Layer
+
+| Component | Role |
+|---|---|
+| `Sounds` | Plays audio feedback via JavaFX `MediaPlayer` |
+| `graphics.java` | Reserved for future graphics utilities |
+| 9 FXML files | Declarative UI layouts for each screen |
+
+---
+
+## Application Flow
+
+```
+Launch → Sign-In Screen → Home Screen
+                              │
+                 ┌────────────┴────────────┐
+                 │                         │
+          [Teacher/Broadcaster]      [Student/Receiver]
+          Sender View                Receiver View
+          Start Hosting →            Join Network →
+          Stream Loop (Thread)       Display Loop (Thread)
+                 │                         │
+                 └────────┬────────────────┘
+                          │
+                   Chat Panel (both sides)
+                   Multicast Chat Loop
+```
+
+---
+
+## OOP Design — Interfaces
+
+Summit uses interface-based programming as a core OOP principle:
+
+- **`Network`** — enforces a contract for network settings (getters + setters for both screen and chat channels)
+- **`UserInterface`** — enforces user data structure (name + designation)
+
+Both `NetworkSettings` and `User` implement these interfaces, keeping the model layer decoupled and testable.
+
+---
+
+## Design Decisions
+
+| Decision | Reason |
+|---|---|
+| **UDP over TCP** | No connection overhead; occasional frame drops are acceptable in a live stream |
+| **Multicast over Unicast** | One sender reaches all receivers without needing to know who they are |
+| **JPEG compression** | Dramatically reduces packet volume compared to raw bitmap data |
+| **LAN-only** | No STUN/TURN servers needed; simpler, faster, no internet dependency |
+| **Single broadcaster** | Classroom use case — teacher presents, students receive |
+| **No authentication** | Trusted local network assumption; minimises setup friction |
+| **Separate chat channel** | Prevents chat packets from colliding with screen data |
+
+---
+
+## Known Limitations
+
+- **No audio or camera** — by design; in a physical classroom the teacher's voice is already present
+- **No encryption** — packets are plaintext on the LAN; intended for trusted networks only
+- **No guaranteed frame delivery** — a dropped UDP packet means a skipped frame
+- **No reconnection logic** — if the network drops mid-session, the user must rejoin manually
+- **Fixed 1024-byte packet size** — not adaptive to varying network conditions
 
 ---
 
 ## Requirements
 
-- Java 11 or later (with JavaFX SDK if not bundled)
-- All machines must be on the **same LAN**
-- The network must support **UDP multicast** (most local routers/switches do)
-- Firewall must allow the configured UDP port
+- Java 18 or later
+- JavaFX 20 SDK
+- Maven 3.x
+- All machines on the **same LAN**
+- Network must support **UDP multicast** (most local routers/switches do by default)
+- Firewall must allow the configured UDP ports
 
 ---
 
-## Configuration
-
-On first launch, open the **Network Settings** panel and configure:
-
-| Field | Description | Example |
-|---|---|---|
-| Screen Multicast Address | IP for the screen stream group | `239.0.0.1` |
-| Screen Port | UDP port for screen data | `5000` |
-| Screen Interface | Network interface name | `eth0` / `wlan0` |
-| Chat Multicast Address | IP for the chat group | `239.0.0.2` |
-| Chat Port | UDP port for chat | `5001` |
-| Chat Interface | Network interface name | `eth0` / `wlan0` |
-
-> **Tip:** Use addresses in the `239.x.x.x` range — these are reserved for local multicast and won't leak outside your LAN.
-
----
-
-## Running the App
+## Build & Run
 
 ```bash
-# Compile
-javac --module-path /path/to/javafx-sdk/lib \
-      --add-modules javafx.controls,javafx.fxml \
-      -d out src/**/*.java
+# Build
+mvn clean package
 
 # Run
-java --module-path /path/to/javafx-sdk/lib \
-     --add-modules javafx.controls,javafx.fxml \
-     -cp out com.project.Main
+mvn javafx:run
 ```
 
-Or use your IDE (IntelliJ IDEA / Eclipse) with the JavaFX plugin configured.
-
----
-
-## Architecture Overview
-
-```
-┌─────────────────────────────────┐
-│         Presenter (Sender)      │
-│  Robot → JPEG → UDP packets     │
-│         Multicast Group         │
-└────────────────┬────────────────┘
-                 │ UDP Multicast
-        ┌────────┴────────┐
-        │                 │
-┌───────▼──────┐   ┌──────▼───────┐
-│  Receiver 1  │   │  Receiver 2  │  ...
-│ Reassemble → │   │ Reassemble → │
-│ Display image│   │ Display image│
-└──────────────┘   └──────────────┘
-
-Chat works the same way — multicast UDP on a separate group/port.
-```
-
----
-
-## Limitations & Design Decisions
-
-- **Single broadcaster** — by design. This is a classroom tool, not a conference platform.
-- **No authentication** — anyone on the LAN can join the multicast group. Intended for trusted networks.
-- **No audio/video camera** — deliberately omitted. In a physical classroom, you have the teacher's voice. The screen is all that's needed.
-- **No STUN/TURN servers** — works only on LAN. No internet routing is needed or supported.
-- **UDP (no guaranteed delivery)** — occasional frame drops can occur under heavy network load. Acceptable for a live screen share context.
-
----
-
-## Why I Built This
-
-> *"In my college, there was no screen sharing option. So when the lecturer wanted to demo something, the entire class would crowd around their PC — even though everyone had their own machine on the same network. I thought: why not just let the teacher share their screen, with a chat window alongside it?"*
-
-This project was built to solve a real, everyday problem with the simplest possible approach — no cloud services, no complicated setup, just Java and the network that was already there.
+Or open in IntelliJ IDEA / Eclipse with the JavaFX plugin configured and run `Main.java`.
 
 ---
 
 ## License
 
-This project is open for personal and educational use. Feel free to fork and adapt it for your own institution.
+Open for personal and educational use. Feel free to fork and adapt it for your own institution.
